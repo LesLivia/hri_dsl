@@ -39,7 +39,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(model.getScenarios() != null) {
 			for(Scenario s: model.getScenarios()) {
 				if(s.getFloor() != null && s.getFloor().getFloor_name() != null && !floorSet.add(s.getFloor().getFloor_name())){
-					error("Error: " + "the floor name \"" + s.getFloor().getFloor_name() + "\" has already been used.\n" + "The floor name must be unique.", s.getFloor(), HriDslPackage.Literals.FLOOR__FLOOR_NAME);
+					error("Error: " + "Layout name \"" + s.getFloor().getFloor_name() + "\" already in use.\n" + "Layout name must be unique.", s.getFloor(), HriDslPackage.Literals.FLOOR__FLOOR_NAME);
 				}
 			}
 		}
@@ -52,7 +52,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(floor.getSurfaces() != null) {
 			for(Surface s: floor.getSurfaces()) {
 				if(s.getName() != null && !surfaceSet.add(s.getName())){
-					error("Error: " + "the rectangular_surface name \"" + s.getName() + "\" has already been used for this floor.\n" + "The rectangular_surface name must be unique for the same floor.", s, HriDslPackage.Literals.SURFACE__NAME);
+					error("Error: " + "Area name \"" + s.getName() + "\" already in use in this layour.\n" + "Area name must be unique within the same layout.", s, HriDslPackage.Literals.SURFACE__NAME);
 				}
 			}
 		}
@@ -67,10 +67,10 @@ public class HriDslValidator extends AbstractHriDslValidator {
 			float Vertex_C_coordinate_y = surface.getVertices().getVertex_C().getY();
 			
 				if(Vertex_A_coordinate_x == Vertex_C_coordinate_x) {
-					error("Error: " + "the coordinates of the vertices A and C must be different.\n" + "To represent a rectangular_surface the vertices A and C cannot be overlapped or aligned.\n" + "rectangular_surface representation:\nA ---- B\n   |     |\nD ---- C", surface.getVertices().getVertex_C(), HriDslPackage.Literals.COORDINATES__X);
+					error("Error: " + "Coordinates must be different.\n" + "Area vertices cannot overlap or be aligned.\n" + "Area representation:\nA ---- B\n   |     |\nD ---- C", surface.getVertices().getVertex_C(), HriDslPackage.Literals.COORDINATES__X);
 				}
 				if(Vertex_A_coordinate_y == Vertex_C_coordinate_y) {
-					error("Error: " + "the coordinates of the vertices A and C must be different.\n" + "To represent a rectangular_surface the vertices A and C cannot be overlapped or aligned.\n" + "rectangular_surface representation:\nA ---- B\n   |     |\nD ---- C", surface.getVertices().getVertex_C(), HriDslPackage.Literals.COORDINATES__Y);
+					error("Error: " + "Coordinates must be different.\n" + "Area vertices cannot overlap or be aligned.\n" + "Area representation:\nA ---- B\n   |     |\nD ---- C", surface.getVertices().getVertex_C(), HriDslPackage.Literals.COORDINATES__Y);
 				}
 			
 		}
@@ -86,7 +86,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 					if(floor.getSurfaces().get(i).getVertices() != null && floor.getSurfaces().get(j).getVertices() != null && floor.getSurfaces().get(i).getVertices().getVertex_A() != null && floor.getSurfaces().get(j).getVertices().getVertex_A() != null && floor.getSurfaces().get(i).getVertices().getVertex_C() != null && floor.getSurfaces().get(j).getVertices().getVertex_C() != null){
 						if(floor.getSurfaces().get(i).getVertices().getVertex_A().getX() == floor.getSurfaces().get(j).getVertices().getVertex_A().getX() && floor.getSurfaces().get(i).getVertices().getVertex_A().getY() == floor.getSurfaces().get(j).getVertices().getVertex_A().getY() && floor.getSurfaces().get(i).getVertices().getVertex_C().getX() == floor.getSurfaces().get(j).getVertices().getVertex_C().getX() && floor.getSurfaces().get(i).getVertices().getVertex_C().getY() == floor.getSurfaces().get(j).getVertices().getVertex_C().getY()) {
 							if(indexSet.add(j)) {
-								error("Error: " + "the rectangular_surface \"" + floor.getSurfaces().get(j).getName() + "\" and the rectangular_surface \"" + floor.getSurfaces().get(i).getName() + "\" are overlapped.\n" + "There cannot be two rectangular_surface with the same vertices.", floor.getSurfaces().get(j), HriDslPackage.Literals.SURFACE__NAME);
+								error("Error: " + "Area \"" + floor.getSurfaces().get(j).getName() + "\" and the area \"" + floor.getSurfaces().get(i).getName() + "\" overlap.\n" + "Two areas cannot share vertices.", floor.getSurfaces().get(j), HriDslPackage.Literals.SURFACE__NAME);
 							}
 						}
 					}
@@ -102,7 +102,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(floor.getPoints() != null) {
 			for(Point p: floor.getPoints()) {
 				if(p.getName() != null && !pointSet.add(p.getName())){
-					error("Error: " + "the point_of_interest name \"" + p.getName() + "\" has already been used for this floor.\n" + "The point_of_interest name must be unique for the same floor.", p, HriDslPackage.Literals.POINT__NAME);
+					error("Error: " + "POI name \"" + p.getName() + "\" already in use in this layout.\n" + "POI name must be unique within the same layout.", p, HriDslPackage.Literals.POINT__NAME);
 				}
 			}
 		}
@@ -128,10 +128,26 @@ public class HriDslValidator extends AbstractHriDslValidator {
 						}
 					}
 					if(!valid){
-						error("Error: " + "the point_of_interest \"" + p.getName() + "\" is not valid.\n" + "The coordinates of the point_of_interest must be into a rectangular_surface.", p, HriDslPackage.Literals.POINT__NAME);
+						error("Error: " + "POI \"" + p.getName() + "\" is not valid.\n" + "POI coordinates must belong to an area.", p, HriDslPackage.Literals.POINT__NAME);
 					}
 				}
 			}
+		}
+	}
+	
+	
+	@Check
+	public void checkExistingRech(Floor floor) {
+		boolean valid = false;
+		if(floor.getPoints() != null && floor.getSurfaces() != null){
+			for(Point p: floor.getPoints()) {
+				if(!valid) {
+					valid = p.getName().equals("RECH");
+				}
+			}
+		}
+		if(!valid){
+			error("Error: Layout not valid.\"" + floor.getFloor_name() + "Robot's recharging station POI must be specified.\n Define a POI named 'RECH'.", HriDslPackage.Literals.FLOOR__FLOOR_NAME);
 		}
 	}
 	
@@ -142,7 +158,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(robots.getRobots() != null){
 			for(Robot r: robots.getRobots()) {
 				if(r.getName() != null && !robotSet.add(r.getName())){
-					error("Error: " + "the robot name \"" + r.getName() + "\" has already been used for this floor.\n" + "The robot name must be unique for the same floor.", r, HriDslPackage.Literals.ROBOT__NAME);
+					error("Error: " + "Robot name \"" + r.getName() + "\" already in use in this layout.\n" + "Robot name must be unique within the same layout.", r, HriDslPackage.Literals.ROBOT__NAME);
 				}
 			}
 		}
@@ -158,7 +174,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 				if(r.getCoordinates() != null && r.getName() != null){
 					name = positionMap.putIfAbsent(new Point2D.Float(r.getCoordinates().getX(), r.getCoordinates().getY()), r.getName());
 					if(name != null) {
-						error("Error: " + "the robot coordinates \"(" + r.getCoordinates().getX() + ";" + r.getCoordinates().getY() + ")\" has already been used for " + name + ".\n" + "Change starting position.", r, HriDslPackage.Literals.ROBOT__NAME);
+						error("Error: " + "the robot coordinates \"(" + r.getCoordinates().getX() + ";" + r.getCoordinates().getY() + ")\" has already been used for " + name + ".\n" + "Change starting location.", r, HriDslPackage.Literals.ROBOT__NAME);
 					}
 				}
 			}
@@ -168,7 +184,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 				if(h.getCoordinates() != null && h.getName() != null){
 					name = positionMap.putIfAbsent(new Point2D.Float(h.getCoordinates().getX(), h.getCoordinates().getY()), h.getName());
 					if(name != null) {
-						error("Error: " + "the human coordinates \"(" + h.getCoordinates().getX() + ";" + h.getCoordinates().getY() + ")\" has already been used for " + name + ".\n" + "Change starting position.", h, HriDslPackage.Literals.HUMAN__NAME);
+						error("Error: " + "Human coordinates \"(" + h.getCoordinates().getX() + ";" + h.getCoordinates().getY() + ")\" already in use for " + name + ".\n" + "Change starting location.", h, HriDslPackage.Literals.HUMAN__NAME);
 					}
 				}
 			}
@@ -179,7 +195,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 	@Check
 	public void checkChargePercentage(Robot robot) {
 		if(robot.getCharge_percentage() > 100) {
-			error("Error: " + "the robot charge_percentage cannot be more than 100", robot, HriDslPackage.Literals.ROBOT__CHARGE_PERCENTAGE, HriDslValidator.PERCENTAGE, String.valueOf(robot.getCharge_percentage()));
+			error("Error: " + "Robot charge cannot be more than 100", robot, HriDslPackage.Literals.ROBOT__CHARGE_PERCENTAGE, HriDslValidator.PERCENTAGE, String.valueOf(robot.getCharge_percentage()));
 		}
 	}
 	
@@ -203,7 +219,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 						}
 					}
 					if(!valid) {
-						error("Error: " + "the coordinates of the robot \"" + robot.getName() + "\" are not valid.\n" + "The coordinates of the robot must be into a rectangular_surface.", robot, HriDslPackage.Literals.ROBOT__NAME);
+						error("Error: " + "Robot coordinates \"" + robot.getName() + "\" not valid.\n" + "Robot coordinates must belong to an area.", robot, HriDslPackage.Literals.ROBOT__NAME);
 					}
 				}
 			}
@@ -217,7 +233,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(humans.getHumans() != null){
 			for(Human h: humans.getHumans()){
 				if(h.getName() != null && !humansSet.add(h.getName())){
-					error("Error: " + "the human name \"" + h.getName() + "\" has already been used for this floor.\n" + "The human name must be unique for the same floor.", h, HriDslPackage.Literals.HUMAN__NAME);
+					error("Error: " + "Human name \"" + h.getName() + "\" already in use in this layout.\n" + "Human name must be unique within the same layout.", h, HriDslPackage.Literals.HUMAN__NAME);
 				}
 			}
 		}
@@ -245,7 +261,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 						}
 					}
 					if(!valid) {
-						error("Error: " + "the coordinates of the human \"" + human.getName() + "\" are not valid.\n" + "The coordinates of the human must be into a rectangular_surface.", human, HriDslPackage.Literals.HUMAN__NAME);
+						error("Error: " + "Human coordinates \"" + human.getName() + "\" not valid.\n" + "Human coordinates must belong to an area.", human, HriDslPackage.Literals.HUMAN__NAME);
 					}
 				}
 			}
@@ -259,7 +275,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(scenario.getMissions() != null) {
 			for(Mission m: scenario.getMissions()) {
 				if(m.getName() != null && !missionsSet.add(m.getName())){
-					error("Error: " + "the mission name \"" + m.getName() + "\" has already been used for this floor.\n" + "The mission name must be unique for the same floor.", m, HriDslPackage.Literals.MISSION__NAME);
+					error("Error: " + "Mission name \"" + m.getName() + "\" already in use in this layout.\n" + "Mission name must be unique within the same layout.", m, HriDslPackage.Literals.MISSION__NAME);
 				}
 			}
 		}
@@ -281,7 +297,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 								}
 							}
 							if(!valid){
-								error("Error: " + "the mission \"" + m.getName() + "\" does not contain an assignment for the human \"" + h.getName() + "\".\n" + "The mission must contain an assignment for each human on the floor.", m, HriDslPackage.Literals.MISSION__NAME);
+								error("Error: " + "Mission \"" + m.getName() + "\" does not contain an assignment for human \"" + h.getName() + "\".\n" + "The mission must contain an assignment for each human within the layout.", m, HriDslPackage.Literals.MISSION__NAME);
 							}
 						}
 					}
@@ -306,7 +322,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 								}
 							}
 							if(!valid){
-								error("Error: " + "the human \"" + a.getClient() + "\" does not exist.\n" + "Enter the human in the humans block.", a, HriDslPackage.Literals.ASSIGNMENT__CLIENT);
+								error("Error: " + "Human \"" + a.getClient() + "\" does not exist.\n" + "Use a valid human name.", a, HriDslPackage.Literals.ASSIGNMENT__CLIENT);
 							}
 						}
 					}
@@ -314,7 +330,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 			}
 		}
 	}
-	
+/*	
 	@Check
 	public void checkDuplicates(Mission mission){
 		HashSet<String> humanSet = new HashSet<String>();
@@ -322,12 +338,12 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(mission.getAssignments() != null){
 			for(Assignment a: mission.getAssignments()){
 				if(a.getClient() != null && !humanSet.add(a.getClient())) {
-					error("Error: " + "the human \"" + a.getClient() + "\" is already present in this mission.\n", a, HriDslPackage.Literals.ASSIGNMENT__CLIENT);
+					error("Error: " + "Human \"" + a.getClient() + "\"already present in this mission.\n", a, HriDslPackage.Literals.ASSIGNMENT__CLIENT);
 				}
 			}
 		}
 	}
-	
+*/	
 	@Check
 	public void checkExistingPoint(Scenario scenario) {
 		
@@ -344,7 +360,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 								}
 							}
 							if(!valid){
-								error("Error: " + "the target \"" + a.getTarget() + "\" does not exist.\n" + "Enter the target in the point_of_interest section.", a, HriDslPackage.Literals.ASSIGNMENT__TARGET);
+								error("Error: " + "Target \"" + a.getTarget() + "\" does not exist.\n" + "Enter a valid POI name.", a, HriDslPackage.Literals.ASSIGNMENT__TARGET);
 							}
 						}
 					}
@@ -372,7 +388,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 						if(valid){break;}
 					}
 					if(!valid){
-						warning("Warning: " + "the point_of_interest \"" + p.getName() + "\" is not used.", p, HriDslPackage.Literals.POINT__NAME);
+						warning("Warning: " + "POI \"" + p.getName() + "\" not used.", p, HriDslPackage.Literals.POINT__NAME);
 					}
 				}
 			}
@@ -385,7 +401,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		
 		if(mission.getQueries() != null && mission.getQueries().getMission() != null) {
 			if(mission.getName() != null && !mission.getName().equals(mission.getQueries().getMission())){
-				error("Error: " + "the mission name \"" + mission.getQueries().getMission() + "\" should be \"" + mission.getName() + "\".", mission.getQueries(), HriDslPackage.Literals.QUERIES__MISSION, HriDslValidator.QUERY_DEFINITION, mission.getQueries().getMission(),mission.getName());
+				error("Error: " + "Mission name \"" + mission.getQueries().getMission() + "\" should be \"" + mission.getName() + "\".", mission.getQueries(), HriDslPackage.Literals.QUERIES__MISSION, HriDslValidator.QUERY_DEFINITION, mission.getQueries().getMission(),mission.getName());
 			}
 		}
 	}

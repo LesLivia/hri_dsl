@@ -22,7 +22,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class Json {
   private Operations op = new Operations();
-
+  
   public CharSequence pQuery(final Query q) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"type\": \"");
@@ -79,7 +79,7 @@ public class Json {
     _builder.append(" }");
     return _builder;
   }
-
+  
   public CharSequence pRobots(final int id, final Robot r, final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"name\": \"");
@@ -102,25 +102,35 @@ public class Json {
           _builder_1.append(_unitConversion_1);
           _switchResult = _builder_1;
           break;
-        case "tiago":
+        case "turtlebot3_wafflepi":
           StringConcatenation _builder_2 = new StringConcatenation();
           _builder_2.append("\"v\": ");
-          float _unitConversion_2 = this.op.unitConversion(1.0f, parameter);
+          float _unitConversion_2 = this.op.unitConversion(0.26f, parameter);
           _builder_2.append(_unitConversion_2);
           _builder_2.append(", \"a\": ");
-          float _unitConversion_3 = this.op.unitConversion(1.0f, parameter);
+          float _unitConversion_3 = this.op.unitConversion(0.26f, parameter);
           _builder_2.append(_unitConversion_3);
           _switchResult = _builder_2;
           break;
-        case "pepper":
+        case "tiago":
           StringConcatenation _builder_3 = new StringConcatenation();
           _builder_3.append("\"v\": ");
-          float _unitConversion_4 = this.op.unitConversion(0.83f, parameter);
+          float _unitConversion_4 = this.op.unitConversion(1.0f, parameter);
           _builder_3.append(_unitConversion_4);
           _builder_3.append(", \"a\": ");
-          float _unitConversion_5 = this.op.unitConversion(0.83f, parameter);
+          float _unitConversion_5 = this.op.unitConversion(1.0f, parameter);
           _builder_3.append(_unitConversion_5);
           _switchResult = _builder_3;
+          break;
+        case "pepper":
+          StringConcatenation _builder_4 = new StringConcatenation();
+          _builder_4.append("\"v\": ");
+          float _unitConversion_6 = this.op.unitConversion(0.83f, parameter);
+          _builder_4.append(_unitConversion_6);
+          _builder_4.append(", \"a\": ");
+          float _unitConversion_7 = this.op.unitConversion(0.83f, parameter);
+          _builder_4.append(_unitConversion_7);
+          _switchResult = _builder_4;
           break;
         default:
           _switchResult = null;
@@ -142,7 +152,7 @@ public class Json {
     _builder.append(" }");
     return _builder;
   }
-
+  
   public CharSequence pAreas(final Surface s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"p1\": [");
@@ -172,7 +182,7 @@ public class Json {
     _builder.append("] }");
     return _builder;
   }
-
+  
   public CharSequence pIntersect(final float x, final float y) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"p\": [");
@@ -182,7 +192,7 @@ public class Json {
     _builder.append("] }");
     return _builder;
   }
-
+  
   public CharSequence pHumans(final int id, final Human h, final Assignment a, final Point p) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -342,7 +352,7 @@ public class Json {
     }
     return _builder;
   }
-
+  
   public CharSequence pScenario(final Scenario scenario, final Mission mission, final ArrayList<Point2D.Float> intersections, final int max_n, final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{");

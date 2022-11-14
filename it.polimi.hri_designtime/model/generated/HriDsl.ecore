@@ -61,8 +61,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Type">
     <eLiterals name="TURTLEBOT3_BURGER" literal="turtlebot3_burger"/>
-    <eLiterals name="TIAGO" value="1" literal="tiago"/>
-    <eLiterals name="PEPPER" value="2" literal="pepper"/>
+    <eLiterals name="TURTLEBOT3_WAFFLEPI" value="1" literal="turtlebot3_wafflepi"/>
+    <eLiterals name="TIAGO" value="2" literal="tiago"/>
+    <eLiterals name="PEPPER" value="3" literal="pepper"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Humans">
     <eStructuralFeatures xsi:type="ecore:EReference" name="humans" upperBound="-1"

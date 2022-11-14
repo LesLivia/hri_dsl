@@ -18,19 +18,19 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class Operations {
   private int max_n;
-
+  
   private HashSet<Point2D.Float> n;
-
+  
   private Rectangle2D temp_r;
-
+  
   private HashSet<Point2D.Float> points_set;
-
+  
   private HashMap<Rectangle2D.Float, HashSet<Point2D.Float>> rectangles_map;
-
+  
   private ArrayList<Rectangle2D.Float> rectangles;
-
+  
   private HashMap<Point2D.Float, HashSet<Rectangle2D.Float>> points_map;
-
+  
   public int computeIntersections(final Floor floor, final ArrayList<Point2D.Float> intersections) {
     HashSet<Point2D.Float> _hashSet = new HashSet<Point2D.Float>();
     this.points_set = _hashSet;
@@ -96,7 +96,7 @@ public class Operations {
     intersections.addAll(this.points_set);
     return this.max_n;
   }
-
+  
   private boolean intersects(final Rectangle2D.Float r1, final Rectangle2D.Float r2) {
     if ((((r1.getY() < (r2.getY() + r2.getHeight())) && ((r1.getY() + r1.getHeight()) > r2.getY())) && ((r1.getX() < (r2.getX() + r2.getWidth())) && ((r1.getX() + r1.getWidth()) > r2.getX())))) {
       return true;
@@ -104,7 +104,7 @@ public class Operations {
       return false;
     }
   }
-
+  
   public Rectangle2D.Float createRectangle(final Surface s) {
     if (((s.getVertices().getVertex_A().getX() != s.getVertices().getVertex_C().getX()) && (s.getVertices().getVertex_A().getY() != s.getVertices().getVertex_C().getY()))) {
       float _x = s.getVertices().getVertex_A().getX();
@@ -161,7 +161,7 @@ public class Operations {
     }
     return null;
   }
-
+  
   public float unitConversion(final float f, final Parameter parameter) {
     String length_unit = "m";
     float result = 0.0f;

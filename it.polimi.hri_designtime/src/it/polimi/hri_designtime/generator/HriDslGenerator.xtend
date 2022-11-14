@@ -65,7 +65,8 @@ class Json{
   									  default : null}»", "tau": «q.duration», "n": «(q.runs == 0? -1: q.runs)» }'''
 	
 	def pRobots(int id, Robot r, Parameter parameter)'''
-	{ "name": "«r.name»", "r_id": «id», «switch r.type.toString { case "turtlebot3_burger" : '''"v": «op.unitConversion(0.22f, parameter)», "a": «op.unitConversion(0.22f, parameter)»'''  
+	{ "name": "«r.name»", "r_id": «id», «switch r.type.toString { case "turtlebot3_burger" : '''"v": «op.unitConversion(0.22f, parameter)», "a": «op.unitConversion(0.22f, parameter)»''' 
+														   case "turtlebot3_wafflepi" : '''"v": «op.unitConversion(0.26f, parameter)», "a": «op.unitConversion(0.26f, parameter)»''' 
 	  									  				   case "tiago" : '''"v": «op.unitConversion(1.0f, parameter)», "a": «op.unitConversion(1.0f, parameter)»'''  
 	  									  				   case "pepper" : '''"v": «op.unitConversion(0.83f, parameter)», "a": «op.unitConversion(0.83f, parameter)»'''  
 	  									  				   default : null}», "start": [«r.coordinates.x», «r.coordinates.y»], "chg": «r.charge_percentage» }'''

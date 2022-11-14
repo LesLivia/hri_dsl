@@ -24,15 +24,15 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 @SuppressWarnings("all")
 public class HriDslGenerator extends AbstractGenerator {
   private ArrayList<Point2D.Float> intersections;
-
+  
   private int max_n;
-
+  
   private Operations op;
-
+  
   private Json f;
-
+  
   private Parameter parameter;
-
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     Operations _operations = new Operations();

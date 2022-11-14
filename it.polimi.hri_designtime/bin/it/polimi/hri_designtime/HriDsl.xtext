@@ -19,25 +19,26 @@ Scenario:
 	floor=Floor robots=Robots humans=Humans missions+=(Mission)+;
 
 Floor:
-	'build' 'floor' floor_name=ID ':' surfaces+=(Surface)+  points+=(Point)+;
+	'define' 'layout' floor_name=ID ':' surfaces+=(Surface)+  points+=(Point)+;
 
 Surface:
-	'add' 'rectangular_surface' name=ID 'with' vertices=Vertices;
+	'area' name=ID 'in' vertices=Vertices;
 
 Vertices:
-	'coordinates_vertex_A' vertex_A=Coordinates 'coordinates_vertex_C' vertex_C=Coordinates;
+	vertex_A=Coordinates vertex_C=Coordinates;
 
 Point:
-	'add' 'point_of_interest' name=ID 'with' 'coordinates' coordinates=Coordinates;
+	'poi' name=ID 'in' coordinates=Coordinates;
 
 Robots:
 	'define' 'robots' ':' robots+=(Robot)+;
 
 Robot:
-	'robot' name=ID 'with' 'coordinates' coordinates=Coordinates 'type' type=Type 'charge_percentage' charge_percentage=INT;
+	'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=INT;
 
 enum Type:
 	TURTLEBOT3_BURGER='turtlebot3_burger'
+	|TURTLEBOT3_WAFFLEPI='turtlebot3_wafflepi'
 	|TIAGO='tiago'
 	|PEPPER='pepper';
 
@@ -45,7 +46,7 @@ Humans:
 	'define' 'humans' ':' humans+=(Human)+;
 
 Human:
-	'human' name=ID 'with' 'coordinates' coordinates=Coordinates 'speed' speed=FLOAT 'dexterity' dext=INT 'fatigue_profile' fatigue_profile=Fatigue_profile 'free_will_profile' free_will_profile=Free_will_profile;
+	'human' name=ID 'in' coordinates=Coordinates 'speed' speed=FLOAT 'dexterity' dext=INT 'is' fatigue_profile=Fatigue_profile 'freewill' free_will_profile=Free_will_profile;
 
 enum Fatigue_profile:
 	YOUNG_HEALTHY='young_healthy'
@@ -88,7 +89,7 @@ enum Query_type:
  	| PROBABILITY_OF_FAILURE='probability_of_failure';
 
 Coordinates:
-	'(' x=FLOAT ';' y=FLOAT ')';
+	'(' x=FLOAT ',' y=FLOAT ')';
 
 terminal FLOAT returns ecore::EFloat:
 	INT DEC;
