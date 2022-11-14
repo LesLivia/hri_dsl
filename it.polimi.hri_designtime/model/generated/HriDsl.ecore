@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hriDsl" nsURI="http://www.polimi.it/hri_designtime/HriDsl" nsPrefix="hriDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" upperBound="-1"
+        eType="#//Scenario" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length_unit" eType="#//Length_unit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Length_unit">
+    <eLiterals name="METER" literal="m"/>
+    <eLiterals name="KILOMETER" value="1" literal="km"/>
+    <eLiterals name="CENTIMETER" value="2" literal="cm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="floor" eType="#//Floor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="robots" eType="#//Robots"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="humans" eType="#//Humans"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="missions" upperBound="-1"
+        eType="#//Mission" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Floor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="floor_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="surfaces" upperBound="-1"
+        eType="#//Surface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="points" upperBound="-1"
+        eType="#//Point" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Surface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" eType="#//Vertices"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertices">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertex_A" eType="#//Coordinates"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertex_C" eType="#//Coordinates"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Point">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" eType="#//Coordinates"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Robots">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="robots" upperBound="-1"
+        eType="#//Robot" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Robot">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" eType="#//Coordinates"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="charge_percentage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="TURTLEBOT3_BURGER" literal="turtlebot3_burger"/>
+    <eLiterals name="TIAGO" value="1" literal="tiago"/>
+    <eLiterals name="PEPPER" value="2" literal="pepper"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Humans">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="humans" upperBound="-1"
+        eType="#//Human" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Human">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinates" eType="#//Coordinates"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dext" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fatigue_profile" eType="#//Fatigue_profile"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="free_will_profile" eType="#//Free_will_profile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Fatigue_profile">
+    <eLiterals name="YOUNG_HEALTHY" literal="young_healthy"/>
+    <eLiterals name="YOUNG_SICK" value="1" literal="young_sick"/>
+    <eLiterals name="ELDERLY_HEALTHY" value="2" literal="elderly_healthy"/>
+    <eLiterals name="ELDERLY_SICK" value="3" literal="elderly_sick"/>
+    <eLiterals name="COVID_PATIENT" value="4" literal="covid_patient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Free_will_profile">
+    <eLiterals name="NORMAL" literal="normal"/>
+    <eLiterals name="HIGH" value="1" literal="high"/>
+    <eLiterals name="LOW" value="2" literal="low"/>
+    <eLiterals name="DISABLED" value="3" literal="disabled"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mission">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignments" upperBound="-1"
+        eType="#//Assignment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queries" eType="#//Queries"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="client" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Pattern">
+    <eLiterals name="ROBOT_LEADER" literal="robot_leader"/>
+    <eLiterals name="ROBOT_FOLLOWER" value="1" literal="robot_follower"/>
+    <eLiterals name="ROBOT_TRANSPORTER" value="2" literal="robot_transporter"/>
+    <eLiterals name="ROBOT_COMPETITOR" value="3" literal="robot_competitor"/>
+    <eLiterals name="ROBOT_RESCUER" value="4" literal="robot_rescuer"/>
+    <eLiterals name="ROBOT_ASSISTANT" value="5" literal="robot_client"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Queries">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mission" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queries" upperBound="-1"
+        eType="#//Query" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Query">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query_type" eType="#//Query_type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="runs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Query_type">
+    <eLiterals name="SIMULATION" literal="simulation"/>
+    <eLiterals name="PROBABILITY_OF_SUCCESS" value="1" literal="probability_of_success"/>
+    <eLiterals name="EXPECTED_FATIGUE" value="2" literal="expected_fatigue"/>
+    <eLiterals name="EXPECTED_CHARGE" value="3" literal="expected_charge"/>
+    <eLiterals name="PROBABILITY_OF_FAILURE" value="4" literal="probability_of_failure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Coordinates">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+</ecore:EPackage>

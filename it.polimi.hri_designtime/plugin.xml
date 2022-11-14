@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.polimi.it/hri_designtime/HriDsl"
+			class = "it.polimi.hri_designtime.hriDsl.HriDslPackage"
+			genModel = "model/generated/HriDsl.genmodel" />
+	</extension>
+</plugin>

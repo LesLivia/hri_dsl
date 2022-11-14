@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: it.polimi.hri_designtime
+Bundle-ManifestVersion: 2
+Bundle-Name: it.polimi.hri_designtime
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: it.polimi.hri_designtime; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: it.polimi.hri_designtime.serializer,
+ it.polimi.hri_designtime.scoping,
+ it.polimi.hri_designtime.hriDsl.impl,
+ it.polimi.hri_designtime.validation,
+ it.polimi.hri_designtime.parser.antlr,
+ it.polimi.hri_designtime.hriDsl.util,
+ it.polimi.hri_designtime.parser.antlr.internal,
+ it.polimi.hri_designtime.generator,
+ it.polimi.hri_designtime,
+ it.polimi.hri_designtime.services,
+ it.polimi.hri_designtime.hriDsl
+Import-Package: org.apache.log4j
