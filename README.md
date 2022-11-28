@@ -8,7 +8,7 @@ The DSL constitutes a friendly interface to the model-driven development framewo
 
 Each scenario features the *layout*, the *humans*, the *robots*, and the *robotic mission*.
 
-The DSL allows the application designer to specify the scenario parameters (e.g., how many humans, their features, the layout shape, etc.). Example DSL files can be found in the [`./hridsl_sources/`](hridsl_sources) folder.
+The DSL allows the application designer to specify the scenario parameters (e.g., how many humans, their features, the layout shape, etc.). Example DSL files can be found in the [`./hridsl_sources/src`](hridsl_sources/src) folder.
 
 Authors:
 
@@ -20,6 +20,15 @@ Authors:
 
 Xtext Project Setup
 -----------
+
+Install the Eclipse IDE for Java and DSL Developers available [here][eclipse].
+
+Open the repository's root folder as an Eclipse workspace.
+
+Open the the '*Open Projects from File System...*' window and browse to the repository's root folder when selecting the project's source. Make sure that the '*Search for nested projects*' and '*Detect and configure project natures*' options are selected.
+
+**WARNING!** 
+Manual creation of empty 'src' and 'xtend-gen' folders might be necessary to solve build errors.
 	
 ---
 
@@ -31,7 +40,6 @@ Xtext Project Setup
 [paper4]: https://doi.org/10.1109/ACCESS.2021.3117852
 [paper5]: https://doi.org/10.1145/3524482.3527653
 [paper6]: https://doi.org/10.1109/MIS.2022.3215698
-[angluin]: https://doi.org/10.1016/0890-5401(87)90052-6
 [uppaal]: https://uppaal.org/
-[dep]: https://github.com/LesLivia/hri_deployment
 [verifyta]: https://docs.uppaal.org/toolsandapi/verifyta/
+[eclipse]: https://www.eclipse.org/downloads/packages/release/2022-09/r/eclipse-ide-java-and-dsl-developers
