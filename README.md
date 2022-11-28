@@ -30,6 +30,13 @@ Open the the '*Open Projects from File System...*' window and browse to the repo
 **WARNING!** 
 Manual creation of empty 'src' and 'xtend-gen' folders might be necessary to solve build errors.
 	
+Running the DSL IDE
+-----------
+
+Right click on the `./it.polimi.hri_designtime.ide` child project and run as 'Eclipse Application'.
+
+Within the newly opened DSL IDE window, select the '*Open Projects from File System...*' window and select `./hridsl_sources/src` as a new project's source.
+
 ---
 
 *Copyright &copy; 2022 Davide Zerla, Livia Lestingi*
