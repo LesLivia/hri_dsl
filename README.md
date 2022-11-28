@@ -12,9 +12,10 @@ The DSL allows the application designer to specify the scenario parameters (e.g.
 
 Authors:
 
-| Name              | E-mail address           |
-|:----------------- |:-------------------------|
-| Lestingi Livia    | livia.lestingi@polimi.it |
+| Name              | E-mail address           	 |
+|:----------------- |:---------------------------|
+| Zerla Davide		| davide.zerla@mail.polimi.it|
+| Lestingi Livia    | livia.lestingi@polimi.it   |
 
 
 Xtext Project Setup
@@ -22,7 +23,7 @@ Xtext Project Setup
 	
 ---
 
-*Copyright &copy; 2021 Livia Lestingi*
+*Copyright &copy; 2022 Davide Zerla, Livia Lestingi*
 
 [paper1]: https://doi.org/10.4204/EPTCS.319.2
 [paper2]: https://doi.org/10.1007/978-3-030-58768-0_17
