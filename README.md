@@ -33,9 +33,9 @@ Manual creation of empty 'src' and 'xtend-gen' folders might be necessary to sol
 Running the DSL IDE
 -----------
 
-Right click on the `./it.polimi.hri_designtime.ide` child project and run as 'Eclipse Application'.
+Right click on the [`./it.polimi.hri_designtime.ide`](it.polimi.hri_designtime.ide) child project and run as 'Eclipse Application'.
 
-Within the newly opened DSL IDE window, select the '*Open Projects from File System...*' window and select `./hridsl_sources/src` as a new project's source.
+Within the newly opened DSL IDE window, select the '*Open Projects from File System...*' window and select [`./hridsl_sources`](hridsl_sources) as a new project's source.
 
 ---
 
