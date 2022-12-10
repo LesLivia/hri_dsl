@@ -431,4 +431,42 @@
 			type="text">
 		</fileTypes>
 	</extension>
+	 <extension
+       point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="it.polimi.hri_designtime.ui.GenerateJsonHandler"
+          description="Save and generate json files if there are no errors"
+          id="it.polimi.hri_designtime.ui.GenerateJson"
+          name="Generate Json">
+    </command>
+    <command
+          defaultHandler="it.polimi.hri_designtime.ui.RunExperimentHandler"
+          description="Run the experiment for the json file currently in use"
+          id="it.polimi.hri_designtime.ui.RunExperiment"
+          name="Run Experiment">
+    </command>
+ </extension>
+ <extension
+       point="org.eclipse.ui.menus">
+    <menuContribution
+          allPopups="false"
+          locationURI="menu:org.eclipse.ui.main.menu?after=help">
+       <menu
+             id="commandsMenu"
+             label="Commands">
+          <command
+                commandId="it.polimi.hri_designtime.ui.GenerateJson"
+                label="Generate Json"
+                style="push"
+                tooltip="Save and generate json files">
+          </command>
+          <command
+                commandId="it.polimi.hri_designtime.ui.RunExperiment"
+                label="Run Experiment"
+                style="push"
+                tooltip="Run the experiment for the json file">
+          </command>
+       </menu>
+    </menuContribution>
+ </extension>
 </plugin>
