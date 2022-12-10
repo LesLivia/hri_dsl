@@ -34,12 +34,24 @@ Open the the '*Open Projects from File System...*' window and browse to the repo
 **WARNING!** 
 Manual creation of empty 'src' and 'xtend-gen' folders might be necessary to solve build errors.
 	
+Initial Setup for the Design-Time Analysis
+-----------
+
+Make sure you have a local copy of the [design-time analysis module][dtan]'s latest version.
+
+Right click on the [`./it.polimi.hri_designtime.ide`](it.polimi.hri_designtime.ide) child project and select '*Run As -> Run Configuration...*'. Within the '*Environment*' tab, add two environment variables called "DTANPATH" and "PYTHONPATH" and set both to your local path to the [hri_designtime][dtan] root folder.
+
 Running the DSL IDE
 -----------
 
 Right click on the [`./it.polimi.hri_designtime.ide`](it.polimi.hri_designtime.ide) child project and run as 'Eclipse Application'.
 
 Within the newly opened DSL IDE window, select the '*Open Projects from File System...*' window and select [`./hridsl_sources`](hridsl_sources) as a new project's source.
+
+Performing the Verification Experiments
+-----------
+
+Once your desired .json file is generated, select it and click on '*Commands -> Run Experiment*' to verify your scenario.
 
 ---
 
@@ -53,3 +65,4 @@ Within the newly opened DSL IDE window, select the '*Open Projects from File Sys
 [uppaal]: https://uppaal.org/
 [verifyta]: https://docs.uppaal.org/toolsandapi/verifyta/
 [eclipse]: https://www.eclipse.org/downloads/packages/release/2022-09/r/eclipse-ide-java-and-dsl-developers
+[dtan]: https://github.com/LesLivia/hri_designtime
