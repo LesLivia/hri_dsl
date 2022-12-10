@@ -79,7 +79,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
    * @generated
    * @ordered
    */
-  protected static final int RUNS_EDEFAULT = 0;
+  protected static final String RUNS_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getRuns() <em>Runs</em>}' attribute.
@@ -89,7 +89,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
    * @generated
    * @ordered
    */
-  protected int runs = RUNS_EDEFAULT;
+  protected String runs = RUNS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -168,7 +168,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
    * @generated
    */
   @Override
-  public int getRuns()
+  public String getRuns()
   {
     return runs;
   }
@@ -179,9 +179,9 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
    * @generated
    */
   @Override
-  public void setRuns(int newRuns)
+  public void setRuns(String newRuns)
   {
-    int oldRuns = runs;
+    String oldRuns = runs;
     runs = newRuns;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, HriDslPackage.QUERY__RUNS, oldRuns, runs));
@@ -224,7 +224,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
         setDuration((Integer)newValue);
         return;
       case HriDslPackage.QUERY__RUNS:
-        setRuns((Integer)newValue);
+        setRuns((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -268,7 +268,7 @@ public class QueryImpl extends MinimalEObjectImpl.Container implements Query
       case HriDslPackage.QUERY__DURATION:
         return duration != DURATION_EDEFAULT;
       case HriDslPackage.QUERY__RUNS:
-        return runs != RUNS_EDEFAULT;
+        return RUNS_EDEFAULT == null ? runs != null : !RUNS_EDEFAULT.equals(runs);
     }
     return super.eIsSet(featureID);
   }

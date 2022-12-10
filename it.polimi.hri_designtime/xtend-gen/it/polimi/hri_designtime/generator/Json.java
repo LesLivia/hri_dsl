@@ -67,11 +67,10 @@ public class Json {
     int _duration = q.getDuration();
     _builder.append(_duration);
     _builder.append(", \"n\": ");
-    int _xifexpression = (int) 0;
-    int _runs = q.getRuns();
-    boolean _equals = (_runs == 0);
+    Object _xifexpression = null;
+    boolean _equals = q.getRuns().equals("auto");
     if (_equals) {
-      _xifexpression = (-1);
+      _xifexpression = Integer.valueOf((-1));
     } else {
       _xifexpression = q.getRuns();
     }

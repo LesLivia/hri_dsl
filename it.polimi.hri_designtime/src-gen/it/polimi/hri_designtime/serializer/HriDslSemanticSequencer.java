@@ -288,7 +288,7 @@ public class HriDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Query returns Query
 	 *
 	 * Constraint:
-	 *     (query_type=Query_type duration=INT runs=INT)
+	 *     (query_type=Query_type duration=INT runs=STRING)
 	 */
 	protected void sequence_Query(ISerializationContext context, Query semanticObject) {
 		if (errorAcceptor != null) {
@@ -302,7 +302,7 @@ public class HriDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getQueryAccess().getQuery_typeQuery_typeEnumRuleCall_1_0(), semanticObject.getQuery_type());
 		feeder.accept(grammarAccess.getQueryAccess().getDurationINTTerminalRuleCall_4_0(), semanticObject.getDuration());
-		feeder.accept(grammarAccess.getQueryAccess().getRunsINTTerminalRuleCall_6_0(), semanticObject.getRuns());
+		feeder.accept(grammarAccess.getQueryAccess().getRunsSTRINGTerminalRuleCall_6_0(), semanticObject.getRuns());
 		feeder.finish();
 	}
 	

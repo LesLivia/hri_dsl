@@ -3681,9 +3681,9 @@ rule__Query__RunsAssignment_6
 	}
 :
 	(
-		{ before(grammarAccess.getQueryAccess().getRunsINTTerminalRuleCall_6_0()); }
-		RULE_INT
-		{ after(grammarAccess.getQueryAccess().getRunsINTTerminalRuleCall_6_0()); }
+		{ before(grammarAccess.getQueryAccess().getRunsSTRINGTerminalRuleCall_6_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getQueryAccess().getRunsSTRINGTerminalRuleCall_6_0()); }
 	)
 ;
 finally {

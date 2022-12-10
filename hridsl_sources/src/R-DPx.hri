@@ -28,11 +28,11 @@ do robot_follower for D1a with target CUP1
 do robot_follower for D1a with target R2 
 
 define queries of mission RDPa:
-compute probability_of_success with duration 300 runs 0
-compute probability_of_success with duration 250 runs 0
-compute probability_of_success with duration 200 runs 0
-compute expected_charge with duration 300 runs 0
-compute expected_fatigue with duration 300 runs 0
+compute probability_of_success with duration 300 runs "auto"
+compute probability_of_success with duration 250 runs "auto"
+compute probability_of_success with duration 200 runs "auto"
+compute expected_charge with duration 300 runs "auto"
+compute expected_fatigue with duration 300 runs "auto"
 
 define layout lB:
 area a1 in (0.0,110.0) (1550.0,299.5)
@@ -62,11 +62,11 @@ do robot_follower for D1b with target R2
 do robot_leader for P1b with target R2
 
 define queries of mission RDPb:
-compute probability_of_success with duration 350 runs 0
-compute probability_of_success with duration 320 runs 0
-compute probability_of_success with duration 300 runs 0
-compute expected_charge with duration 350 runs 0
-compute expected_fatigue with duration 350 runs 0
+compute probability_of_success with duration 350 runs "auto"
+compute probability_of_success with duration 320 runs "auto"
+compute probability_of_success with duration 300 runs "auto"
+compute expected_charge with duration 350 runs "auto"
+compute expected_fatigue with duration 350 runs "auto"
 
 define layout lC:
 area a1 in (0.0,110.0) (1550.0,299.5)
@@ -106,8 +106,8 @@ do robot_leader for P1c with target OFF1
 do robot_leader for P2c with target OFF3
 
 define queries of mission RDPc:
-compute probability_of_success with duration 1500 runs 0
-compute probability_of_success with duration 1400 runs 0
-compute probability_of_success with duration 1300 runs 0
-compute expected_charge with duration 1500 runs 0
-compute expected_fatigue with duration 1500 runs 0
+compute probability_of_success with duration 1500 runs "auto"
+compute probability_of_success with duration 1400 runs "auto"
+compute probability_of_success with duration 1300 runs "auto"
+compute expected_charge with duration 1500 runs "auto"
+compute expected_fatigue with duration 1500 runs "auto"

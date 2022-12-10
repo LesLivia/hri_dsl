@@ -1218,9 +1218,9 @@ ruleQuery returns [EObject current=null]
 		}
 		(
 			(
-				lv_runs_6_0=RULE_INT
+				lv_runs_6_0=RULE_STRING
 				{
-					newLeafNode(lv_runs_6_0, grammarAccess.getQueryAccess().getRunsINTTerminalRuleCall_6_0());
+					newLeafNode(lv_runs_6_0, grammarAccess.getQueryAccess().getRunsSTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -1230,7 +1230,7 @@ ruleQuery returns [EObject current=null]
 						$current,
 						"runs",
 						lv_runs_6_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)

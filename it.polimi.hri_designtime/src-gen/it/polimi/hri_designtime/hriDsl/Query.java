@@ -77,12 +77,12 @@ public interface Query extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Runs</em>' attribute.
-   * @see #setRuns(int)
+   * @see #setRuns(String)
    * @see it.polimi.hri_designtime.hriDsl.HriDslPackage#getQuery_Runs()
    * @model
    * @generated
    */
-  int getRuns();
+  String getRuns();
 
   /**
    * Sets the value of the '{@link it.polimi.hri_designtime.hriDsl.Query#getRuns <em>Runs</em>}' attribute.
@@ -92,6 +92,6 @@ public interface Query extends EObject
    * @see #getRuns()
    * @generated
    */
-  void setRuns(int value);
+  void setRuns(String value);
 
 } // Query

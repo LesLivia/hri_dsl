@@ -62,7 +62,7 @@ class Json{
   									  case "expected_fatigue": '''eftg'''
   									  case "expected_charge": '''echg'''
   									  case "probability_of_failure": '''pfail''' 
-  									  default : null}»", "tau": «q.duration», "n": «(q.runs == 0? -1: q.runs)» }'''
+  									  default : null}»", "tau": «q.duration», "n": «(q.runs.equals("auto")? -1: q.runs)» }'''
 	
 	def pRobots(int id, Robot r, Parameter parameter)'''
 	{ "name": "«r.name»", "r_id": «id», «switch r.type.toString { case "turtlebot3_burger" : '''"v": «op.unitConversion(0.22f, parameter)», "a": «op.unitConversion(0.22f, parameter)»''' 

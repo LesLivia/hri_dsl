@@ -38,8 +38,8 @@ do robot_leader for P1c with target OFF1
 do robot_leader for P2c with target OFF3
 
 define queries of mission DPc:
-compute probability_of_success with duration 1500 runs 0
-compute probability_of_success with duration 1400 runs 0
-compute probability_of_success with duration 1300 runs 0 
-compute expected_charge with duration 1500 runs 0
-compute expected_fatigue with duration 1500 runs 0
+compute probability_of_success with duration 1500 runs "auto"
+compute probability_of_success with duration 1400 runs "auto"
+compute probability_of_success with duration 1300 runs "auto"
+compute expected_charge with duration 1500 runs "auto"
+compute expected_fatigue with duration 1500 runs "auto"

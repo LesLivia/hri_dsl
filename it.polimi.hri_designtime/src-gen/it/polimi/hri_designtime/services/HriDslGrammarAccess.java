@@ -626,13 +626,13 @@ public class HriDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cDurationINTTerminalRuleCall_4_0 = (RuleCall)cDurationAssignment_4.eContents().get(0);
 		private final Keyword cRunsKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cRunsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRunsINTTerminalRuleCall_6_0 = (RuleCall)cRunsAssignment_6.eContents().get(0);
+		private final RuleCall cRunsSTRINGTerminalRuleCall_6_0 = (RuleCall)cRunsAssignment_6.eContents().get(0);
 		
 		//Query:
-		//    'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=INT;
+		//    'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=INT
+		//'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'compute'
@@ -659,11 +659,11 @@ public class HriDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'runs'
 		public Keyword getRunsKeyword_5() { return cRunsKeyword_5; }
 		
-		//runs=INT
+		//runs=STRING
 		public Assignment getRunsAssignment_6() { return cRunsAssignment_6; }
 		
-		//INT
-		public RuleCall getRunsINTTerminalRuleCall_6_0() { return cRunsINTTerminalRuleCall_6_0; }
+		//STRING
+		public RuleCall getRunsSTRINGTerminalRuleCall_6_0() { return cRunsSTRINGTerminalRuleCall_6_0; }
 	}
 	public class CoordinatesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.polimi.hri_designtime.HriDsl.Coordinates");
@@ -1325,7 +1325,7 @@ public class HriDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Query:
-	//    'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=INT;
+	//    'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=STRING;
 	public QueryElements getQueryAccess() {
 		return pQuery;
 	}

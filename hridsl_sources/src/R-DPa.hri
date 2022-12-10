@@ -28,8 +28,8 @@ do robot_follower for D1a with target CUP1
 do robot_follower for D1a with target R2 
 
 define queries of mission RDPa:
-compute probability_of_success with duration 300 runs 0
-compute probability_of_success with duration 250 runs 0
-compute probability_of_success with duration 200 runs 0
-compute expected_charge with duration 300 runs 0
-compute expected_fatigue with duration 300 runs 0
+compute probability_of_success with duration 300 runs "auto"
+compute probability_of_success with duration 250 runs "auto"
+compute probability_of_success with duration 200 runs "auto"
+compute expected_charge with duration 300 runs "auto"
+compute expected_fatigue with duration 300 runs "auto"

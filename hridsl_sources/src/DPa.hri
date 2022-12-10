@@ -30,8 +30,8 @@ do robot_follower for D1a with target R2
 do robot_leader for P1a with target R2
 
 define queries of mission DPa:
-compute probability_of_success with duration 400 runs 0
-compute probability_of_success with duration 350 runs 0
-compute probability_of_success with duration 300 runs 0
-compute expected_charge with duration 400 runs 0
-compute expected_fatigue with duration 400 runs 0
+compute probability_of_success with duration 400 runs "auto"
+compute probability_of_success with duration 350 runs "auto"
+compute probability_of_success with duration 300 runs "auto"
+compute expected_charge with duration 400 runs "auto"
+compute expected_fatigue with duration 400 runs "auto"

@@ -32,7 +32,7 @@ public class InternalHriDslLexer extends Lexer {
     public static final int T__60=60;
     public static final int T__61=61;
     public static final int RULE_ID=4;
-    public static final int RULE_DEC=7;
+    public static final int RULE_DEC=8;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -54,7 +54,7 @@ public class InternalHriDslLexer extends Lexer {
     public static final int T__21=21;
     public static final int T__65=65;
     public static final int T__70=70;
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;

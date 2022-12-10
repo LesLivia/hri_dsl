@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_DEC", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parameter'", "'length_unit'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parameter'", "'length_unit'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -44,7 +44,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final int T__60=60;
     public static final int T__61=61;
     public static final int RULE_ID=4;
-    public static final int RULE_DEC=7;
+    public static final int RULE_DEC=8;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -66,7 +66,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final int T__21=21;
     public static final int T__65=65;
     public static final int T__70=70;
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=7;
     public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -2702,7 +2702,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuery"
-    // InternalHriDsl.g:1158:1: ruleQuery returns [EObject current=null] : (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_INT ) ) ) ;
+    // InternalHriDsl.g:1158:1: ruleQuery returns [EObject current=null] : (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_STRING ) ) ) ;
     public final EObject ruleQuery() throws RecognitionException {
         EObject current = null;
 
@@ -2719,11 +2719,11 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1164:2: ( (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_INT ) ) ) )
-            // InternalHriDsl.g:1165:2: (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_INT ) ) )
+            // InternalHriDsl.g:1164:2: ( (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_STRING ) ) ) )
+            // InternalHriDsl.g:1165:2: (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_STRING ) ) )
             {
-            // InternalHriDsl.g:1165:2: (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_INT ) ) )
-            // InternalHriDsl.g:1166:3: otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_INT ) )
+            // InternalHriDsl.g:1165:2: (otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_STRING ) ) )
+            // InternalHriDsl.g:1166:3: otherlv_0= 'compute' ( (lv_query_type_1_0= ruleQuery_type ) ) otherlv_2= 'with' otherlv_3= 'duration' ( (lv_duration_4_0= RULE_INT ) ) otherlv_5= 'runs' ( (lv_runs_6_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,38,FOLLOW_43); 
 
@@ -2794,19 +2794,19 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,40,FOLLOW_21); 
+            otherlv_5=(Token)match(input,40,FOLLOW_46); 
 
             			newLeafNode(otherlv_5, grammarAccess.getQueryAccess().getRunsKeyword_5());
             		
-            // InternalHriDsl.g:1219:3: ( (lv_runs_6_0= RULE_INT ) )
-            // InternalHriDsl.g:1220:4: (lv_runs_6_0= RULE_INT )
+            // InternalHriDsl.g:1219:3: ( (lv_runs_6_0= RULE_STRING ) )
+            // InternalHriDsl.g:1220:4: (lv_runs_6_0= RULE_STRING )
             {
-            // InternalHriDsl.g:1220:4: (lv_runs_6_0= RULE_INT )
-            // InternalHriDsl.g:1221:5: lv_runs_6_0= RULE_INT
+            // InternalHriDsl.g:1220:4: (lv_runs_6_0= RULE_STRING )
+            // InternalHriDsl.g:1221:5: lv_runs_6_0= RULE_STRING
             {
-            lv_runs_6_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_runs_6_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            					newLeafNode(lv_runs_6_0, grammarAccess.getQueryAccess().getRunsINTTerminalRuleCall_6_0());
+            					newLeafNode(lv_runs_6_0, grammarAccess.getQueryAccess().getRunsSTRINGTerminalRuleCall_6_0());
             				
 
             					if (current==null) {
@@ -2816,7 +2816,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             						current,
             						"runs",
             						lv_runs_6_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
+            						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
             }
@@ -2913,7 +2913,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             // InternalHriDsl.g:1261:4: (lv_x_1_0= RULE_FLOAT )
             // InternalHriDsl.g:1262:5: lv_x_1_0= RULE_FLOAT
             {
-            lv_x_1_0=(Token)match(input,RULE_FLOAT,FOLLOW_46); 
+            lv_x_1_0=(Token)match(input,RULE_FLOAT,FOLLOW_47); 
 
             					newLeafNode(lv_x_1_0, grammarAccess.getCoordinatesAccess().getXFLOATTerminalRuleCall_1_0());
             				
@@ -2943,7 +2943,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             // InternalHriDsl.g:1283:4: (lv_y_3_0= RULE_FLOAT )
             // InternalHriDsl.g:1284:5: lv_y_3_0= RULE_FLOAT
             {
-            lv_y_3_0=(Token)match(input,RULE_FLOAT,FOLLOW_47); 
+            lv_y_3_0=(Token)match(input,RULE_FLOAT,FOLLOW_48); 
 
             					newLeafNode(lv_y_3_0, grammarAccess.getCoordinatesAccess().getYFLOATTerminalRuleCall_3_0());
             				
@@ -3935,7 +3935,8 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x000000000000007CL});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000080000000000L});
 
 }

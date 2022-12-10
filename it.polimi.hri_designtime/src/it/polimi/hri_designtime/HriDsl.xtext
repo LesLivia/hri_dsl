@@ -79,7 +79,7 @@ Queries:
 	'define' 'queries' 'of' 'mission' mission=ID ':' queries+=(Query)+;
 
 Query:
-	'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=INT;
+	'compute' query_type=Query_type 'with' 'duration' duration=INT 'runs' runs=STRING;
 
 enum Query_type:
 	SIMULATION='simulation' 
