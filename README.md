@@ -4,7 +4,11 @@ DSL for Human-Robot Interactive Service Scenarios
 The repository contains the implementation of a Domain-Specific Language (DSL) to configure human-robot interaction scenarios in service settings.
 The DSL constitutes a friendly interface to the model-driven development framework presented in:
 
-- Lestingi, L., Bersani, M. M., & Rossi, M. (2022). Model-Driven Development of Service Robot Applications Dealing with Uncertain Human Behavior. IEEE Intelligent Systems, 37, 1-10. [doi.org/10.1109/MIS.2022.3215698][paper6]
+- Lestingi, L., Sbrolli, C., Scarmozzino, P., Romeo, G., Bersani, M. M., & Rossi, M. (2022). Formal modeling and verification of multi-robot interactive scenarios in service settings. In FormaliSE 2022 (pp. 80-90). [doi.org/10.1145/3524482.3527653][paper5]
+- Lestingi, L., Askarpour, M., Bersani, M. M., & Rossi, M. (2021). A Deployment Framework for Formally Verified Human-Robot Interactions. IEEE Access. [doi.org/10.1109/ACCESS.2021.3117852][paper4]
+- Lestingi, L., Askarpour, M., Bersani, M. M., & Rossi, M. (2020, September). *Formal verification of human-robot interaction in healthcare scenarios*. In SEFM 2020 (pp. 303-324). Springer, Cham. [doi.org/10.1007/978-3-030-58768-0_17][paper2]
+- Lestingi, L., Askarpour, M., Bersani, M. M., & Rossi, M. (2020). *A Model-driven Approach for the Formal Analysis of Human-Robot Interaction Scenarios*. In SMC 2020 (pp. 1907-1914), IEEE. [doi.org/10.1109/SMC42975.2020.9283204][paper3]
+- Lestingi, L., Askarpour, M., Bersani, M. M., & Rossi, M. (2020). *Statistical Model Checking of Human-Robot Interaction Scenarios*. AREA 2020 [doi.org/10.4204/EPTCS.319.2][paper1].
 
 Each scenario features the *layout*, the *humans*, the *robots*, and the *robotic mission*.
 
@@ -46,7 +50,6 @@ Within the newly opened DSL IDE window, select the '*Open Projects from File Sys
 [paper3]: https://doi.org/10.1109/SMC42975.2020.9283204
 [paper4]: https://doi.org/10.1109/ACCESS.2021.3117852
 [paper5]: https://doi.org/10.1145/3524482.3527653
-[paper6]: https://doi.org/10.1109/MIS.2022.3215698
 [uppaal]: https://uppaal.org/
 [verifyta]: https://docs.uppaal.org/toolsandapi/verifyta/
 [eclipse]: https://www.eclipse.org/downloads/packages/release/2022-09/r/eclipse-ide-java-and-dsl-developers
