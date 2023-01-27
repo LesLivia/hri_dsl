@@ -16,10 +16,10 @@ poi CUP1 in (1400.0, 450.0)
 poi RECH in (4350.0, 450.0)	
 
 define robots:
-robot Tbot in (115.0,200.0) type turtlebot3_wafflepi charge 99.0
+robot Tbot in (110.0,200.0) type turtlebot3_wafflepi charge 99.0
 
 define humans:
-human P1a in (110.0, 200.0) speed 40.0  dexterity 1 is young_healthy freewill normal
+human P1a in (50.0, 200.0) speed 40.0  dexterity 1 is young_healthy freewill normal
 
 define mission HF:
 do robot_leader for P1a with target CUP1
@@ -49,10 +49,10 @@ poi CUP1 in (1400.0, 450.0)
 poi RECH in (4350.0, 450.0)	
 
 define robots:
-robot Tbot in (115.0,200.0) type turtlebot3_wafflepi charge 75.0
+robot Tbot in (110.0,200.0) type turtlebot3_wafflepi charge 75.0
 
 define humans:
-human P1b in (110.0,200.0) speed 40.0  dexterity 1 is elderly_sick freewill normal
+human P1b in (50.0,200.0) speed 40.0  dexterity 1 is elderly_sick freewill normal
 
 define mission HL:
 do robot_follower for P1b with target CUP1
@@ -82,10 +82,10 @@ poi CUP1 in (1400.0, 450.0)
 poi RECH in (4350.0, 450.0)	
 
 define robots:
-robot Tbot in (115.0, 200.0) type turtlebot3_wafflepi charge 0.8
+robot Tbot in (110.0, 200.0) type turtlebot3_wafflepi charge 0.8
 
 define humans:
-human P1c in (110.0, 200.0) speed 40.0 dexterity 1 is young_healthy freewill normal
+human P1c in (50.0, 200.0) speed 40.0 dexterity 1 is young_healthy freewill normal
 
 define mission LB:
 do robot_leader for P1c with target CUP1
