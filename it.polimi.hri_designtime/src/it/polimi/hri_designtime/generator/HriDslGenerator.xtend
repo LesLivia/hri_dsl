@@ -69,7 +69,7 @@ class Json{
 														   case "turtlebot3_wafflepi" : '''"v": «op.unitConversion(0.26f, parameter)», "a": «op.unitConversion(0.26f, parameter)»''' 
 	  									  				   case "tiago" : '''"v": «op.unitConversion(1.0f, parameter)», "a": «op.unitConversion(1.0f, parameter)»'''  
 	  									  				   case "pepper" : '''"v": «op.unitConversion(0.83f, parameter)», "a": «op.unitConversion(0.83f, parameter)»'''  
-	  									  				   default : null}», "start": [«r.coordinates.x», «r.coordinates.y»], "chg": «r.charge_percentage» }'''
+	  									  				   default : null}», "start": [«r.coordinates.x», «r.coordinates.y»], "chg": «op.perctovoltage(r.charge_percentage)» }'''
 	
 	def pAreas(Surface s)'''
 	{ "p1": [«s.vertices.vertex_A.x», «s.vertices.vertex_A.y»], "p2": [«s.vertices.vertex_C.x», «s.vertices.vertex_A.y»], "p3": [«s.vertices.vertex_C.x», «s.vertices.vertex_C.y»], "p4": [«s.vertices.vertex_A.x», «s.vertices.vertex_C.y»] }'''
@@ -229,6 +229,10 @@ class Operations{
 		}
 		
 		return result;
+	}
+	
+	def perctovoltage(float f){
+		return f/100.0f*(12.2f-10.9f)+10.9f
 	}
 	
 }

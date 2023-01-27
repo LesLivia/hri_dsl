@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalHriDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'", "'parameter'", "'length_unit'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'", "'parameter'", "'length_unit'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -48,7 +48,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int T__66=66;
@@ -85,7 +85,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
     public static final int T__49=49;
     public static final int T__44=44;
     public static final int T__45=45;
-    public static final int RULE_FLOAT=6;
+    public static final int RULE_FLOAT=5;
     public static final int T__46=46;
     public static final int T__47=47;
     public static final int T__40=40;
@@ -6379,7 +6379,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
             // InternalHriDsl.g:2018:1: ( rule__Human__Group__4__Impl rule__Human__Group__5 )
             // InternalHriDsl.g:2019:2: rule__Human__Group__4__Impl rule__Human__Group__5
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_22);
             rule__Human__Group__4__Impl();
 
             state._fsp--;
@@ -6454,7 +6454,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
             // InternalHriDsl.g:2045:1: ( rule__Human__Group__5__Impl rule__Human__Group__6 )
             // InternalHriDsl.g:2046:2: rule__Human__Group__5__Impl rule__Human__Group__6
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_27);
             rule__Human__Group__5__Impl();
 
             state._fsp--;
@@ -6539,7 +6539,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
             // InternalHriDsl.g:2072:1: ( rule__Human__Group__6__Impl rule__Human__Group__7 )
             // InternalHriDsl.g:2073:2: rule__Human__Group__6__Impl rule__Human__Group__7
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_28);
             rule__Human__Group__6__Impl();
 
             state._fsp--;
@@ -8900,7 +8900,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
             // InternalHriDsl.g:2869:1: ( rule__Query__Group__3__Impl rule__Query__Group__4 )
             // InternalHriDsl.g:2870:2: rule__Query__Group__3__Impl rule__Query__Group__4
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_28);
             rule__Query__Group__3__Impl();
 
             state._fsp--;
@@ -9215,7 +9215,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
             // InternalHriDsl.g:2977:1: ( rule__Coordinates__Group__0__Impl rule__Coordinates__Group__1 )
             // InternalHriDsl.g:2978:2: rule__Coordinates__Group__0__Impl rule__Coordinates__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_22);
             rule__Coordinates__Group__0__Impl();
 
             state._fsp--;
@@ -9375,7 +9375,7 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
             // InternalHriDsl.g:3031:1: ( rule__Coordinates__Group__2__Impl rule__Coordinates__Group__3 )
             // InternalHriDsl.g:3032:2: rule__Coordinates__Group__2__Impl rule__Coordinates__Group__3
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_22);
             rule__Coordinates__Group__2__Impl();
 
             state._fsp--;
@@ -10400,21 +10400,21 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Robot__Charge_percentageAssignment_7"
-    // InternalHriDsl.g:3408:1: rule__Robot__Charge_percentageAssignment_7 : ( RULE_INT ) ;
+    // InternalHriDsl.g:3408:1: rule__Robot__Charge_percentageAssignment_7 : ( RULE_FLOAT ) ;
     public final void rule__Robot__Charge_percentageAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalHriDsl.g:3412:1: ( ( RULE_INT ) )
-            // InternalHriDsl.g:3413:2: ( RULE_INT )
+            // InternalHriDsl.g:3412:1: ( ( RULE_FLOAT ) )
+            // InternalHriDsl.g:3413:2: ( RULE_FLOAT )
             {
-            // InternalHriDsl.g:3413:2: ( RULE_INT )
-            // InternalHriDsl.g:3414:3: RULE_INT
+            // InternalHriDsl.g:3413:2: ( RULE_FLOAT )
+            // InternalHriDsl.g:3414:3: RULE_FLOAT
             {
-             before(grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0()); 
+             before(grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0()); 
+            match(input,RULE_FLOAT,FOLLOW_2); 
+             after(grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0()); 
 
             }
 
@@ -11242,8 +11242,8 @@ public class InternalHriDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0020000000000002L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0100000000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000001F00000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0200000000000000L});

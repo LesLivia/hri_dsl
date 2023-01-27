@@ -100,12 +100,12 @@ public interface Robot extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Charge percentage</em>' attribute.
-   * @see #setCharge_percentage(int)
+   * @see #setCharge_percentage(float)
    * @see it.polimi.hri_designtime.hriDsl.HriDslPackage#getRobot_Charge_percentage()
    * @model
    * @generated
    */
-  int getCharge_percentage();
+  float getCharge_percentage();
 
   /**
    * Sets the value of the '{@link it.polimi.hri_designtime.hriDsl.Robot#getCharge_percentage <em>Charge percentage</em>}' attribute.
@@ -115,6 +115,6 @@ public interface Robot extends EObject
    * @see #getCharge_percentage()
    * @generated
    */
-  void setCharge_percentage(int value);
+  void setCharge_percentage(float value);
 
 } // Robot

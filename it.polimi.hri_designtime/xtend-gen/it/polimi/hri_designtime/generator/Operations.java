@@ -186,4 +186,8 @@ public class Operations {
     }
     return result;
   }
+  
+  public float perctovoltage(final float f) {
+    return (((f / 100.0f) * (12.2f - 10.9f)) + 10.9f);
+  }
 }

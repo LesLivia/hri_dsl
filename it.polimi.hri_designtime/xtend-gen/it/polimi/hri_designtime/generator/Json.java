@@ -146,8 +146,8 @@ public class Json {
     float _y = r.getCoordinates().getY();
     _builder.append(_y);
     _builder.append("], \"chg\": ");
-    int _charge_percentage = r.getCharge_percentage();
-    _builder.append(_charge_percentage);
+    float _perctovoltage = this.op.perctovoltage(r.getCharge_percentage());
+    _builder.append(_perctovoltage);
     _builder.append(" }");
     return _builder;
   }

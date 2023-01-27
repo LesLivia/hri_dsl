@@ -93,7 +93,7 @@ public class RobotImpl extends MinimalEObjectImpl.Container implements Robot
    * @generated
    * @ordered
    */
-  protected static final int CHARGE_PERCENTAGE_EDEFAULT = 0;
+  protected static final float CHARGE_PERCENTAGE_EDEFAULT = 0.0F;
 
   /**
    * The cached value of the '{@link #getCharge_percentage() <em>Charge percentage</em>}' attribute.
@@ -103,7 +103,7 @@ public class RobotImpl extends MinimalEObjectImpl.Container implements Robot
    * @generated
    * @ordered
    */
-  protected int charge_percentage = CHARGE_PERCENTAGE_EDEFAULT;
+  protected float charge_percentage = CHARGE_PERCENTAGE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -232,7 +232,7 @@ public class RobotImpl extends MinimalEObjectImpl.Container implements Robot
    * @generated
    */
   @Override
-  public int getCharge_percentage()
+  public float getCharge_percentage()
   {
     return charge_percentage;
   }
@@ -243,9 +243,9 @@ public class RobotImpl extends MinimalEObjectImpl.Container implements Robot
    * @generated
    */
   @Override
-  public void setCharge_percentage(int newCharge_percentage)
+  public void setCharge_percentage(float newCharge_percentage)
   {
-    int oldCharge_percentage = charge_percentage;
+    float oldCharge_percentage = charge_percentage;
     charge_percentage = newCharge_percentage;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, HriDslPackage.ROBOT__CHARGE_PERCENTAGE, oldCharge_percentage, charge_percentage));
@@ -309,7 +309,7 @@ public class RobotImpl extends MinimalEObjectImpl.Container implements Robot
         setType((Type)newValue);
         return;
       case HriDslPackage.ROBOT__CHARGE_PERCENTAGE:
-        setCharge_percentage((Integer)newValue);
+        setCharge_percentage((Float)newValue);
         return;
     }
     super.eSet(featureID, newValue);

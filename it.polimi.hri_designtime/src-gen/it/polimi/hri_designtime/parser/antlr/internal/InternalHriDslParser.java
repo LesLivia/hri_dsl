@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parameter'", "'length_unit'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parameter'", "'length_unit'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -48,7 +48,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int T__66=66;
@@ -85,7 +85,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final int T__49=49;
     public static final int T__44=44;
     public static final int T__45=45;
-    public static final int RULE_FLOAT=6;
+    public static final int RULE_FLOAT=5;
     public static final int T__46=46;
     public static final int T__47=47;
     public static final int T__40=40;
@@ -1491,7 +1491,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRobot"
-    // InternalHriDsl.g:592:1: ruleRobot returns [EObject current=null] : (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_INT ) ) ) ;
+    // InternalHriDsl.g:592:1: ruleRobot returns [EObject current=null] : (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_FLOAT ) ) ) ;
     public final EObject ruleRobot() throws RecognitionException {
         EObject current = null;
 
@@ -1510,11 +1510,11 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:598:2: ( (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_INT ) ) ) )
-            // InternalHriDsl.g:599:2: (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_INT ) ) )
+            // InternalHriDsl.g:598:2: ( (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_FLOAT ) ) ) )
+            // InternalHriDsl.g:599:2: (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_FLOAT ) ) )
             {
-            // InternalHriDsl.g:599:2: (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_INT ) ) )
-            // InternalHriDsl.g:600:3: otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_INT ) )
+            // InternalHriDsl.g:599:2: (otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_FLOAT ) ) )
+            // InternalHriDsl.g:600:3: otherlv_0= 'robot' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'in' ( (lv_coordinates_3_0= ruleCoordinates ) ) otherlv_4= 'type' ( (lv_type_5_0= ruleType ) ) otherlv_6= 'charge' ( (lv_charge_percentage_7_0= RULE_FLOAT ) )
             {
             otherlv_0=(Token)match(input,22,FOLLOW_8); 
 
@@ -1620,15 +1620,15 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getRobotAccess().getChargeKeyword_6());
             		
-            // InternalHriDsl.g:672:3: ( (lv_charge_percentage_7_0= RULE_INT ) )
-            // InternalHriDsl.g:673:4: (lv_charge_percentage_7_0= RULE_INT )
+            // InternalHriDsl.g:672:3: ( (lv_charge_percentage_7_0= RULE_FLOAT ) )
+            // InternalHriDsl.g:673:4: (lv_charge_percentage_7_0= RULE_FLOAT )
             {
-            // InternalHriDsl.g:673:4: (lv_charge_percentage_7_0= RULE_INT )
-            // InternalHriDsl.g:674:5: lv_charge_percentage_7_0= RULE_INT
+            // InternalHriDsl.g:673:4: (lv_charge_percentage_7_0= RULE_FLOAT )
+            // InternalHriDsl.g:674:5: lv_charge_percentage_7_0= RULE_FLOAT
             {
-            lv_charge_percentage_7_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_charge_percentage_7_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); 
 
-            					newLeafNode(lv_charge_percentage_7_0, grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0());
+            					newLeafNode(lv_charge_percentage_7_0, grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0());
             				
 
             					if (current==null) {
@@ -1638,7 +1638,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             						current,
             						"charge_percentage",
             						lv_charge_percentage_7_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
+            						"it.polimi.hri_designtime.HriDsl.FLOAT");
             				
 
             }
@@ -1945,7 +1945,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,27,FOLLOW_26); 
+            otherlv_4=(Token)match(input,27,FOLLOW_21); 
 
             			newLeafNode(otherlv_4, grammarAccess.getHumanAccess().getSpeedKeyword_4());
             		
@@ -1955,7 +1955,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             // InternalHriDsl.g:809:4: (lv_speed_5_0= RULE_FLOAT )
             // InternalHriDsl.g:810:5: lv_speed_5_0= RULE_FLOAT
             {
-            lv_speed_5_0=(Token)match(input,RULE_FLOAT,FOLLOW_27); 
+            lv_speed_5_0=(Token)match(input,RULE_FLOAT,FOLLOW_26); 
 
             					newLeafNode(lv_speed_5_0, grammarAccess.getHumanAccess().getSpeedFLOATTerminalRuleCall_5_0());
             				
@@ -1975,7 +1975,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,28,FOLLOW_21); 
+            otherlv_6=(Token)match(input,28,FOLLOW_27); 
 
             			newLeafNode(otherlv_6, grammarAccess.getHumanAccess().getDexterityKeyword_6());
             		
@@ -2764,7 +2764,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getQueryAccess().getWithKeyword_2());
             		
-            otherlv_3=(Token)match(input,39,FOLLOW_21); 
+            otherlv_3=(Token)match(input,39,FOLLOW_27); 
 
             			newLeafNode(otherlv_3, grammarAccess.getQueryAccess().getDurationKeyword_3());
             		
@@ -2903,7 +2903,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             // InternalHriDsl.g:1255:2: (otherlv_0= '(' ( (lv_x_1_0= RULE_FLOAT ) ) otherlv_2= ',' ( (lv_y_3_0= RULE_FLOAT ) ) otherlv_4= ')' )
             // InternalHriDsl.g:1256:3: otherlv_0= '(' ( (lv_x_1_0= RULE_FLOAT ) ) otherlv_2= ',' ( (lv_y_3_0= RULE_FLOAT ) ) otherlv_4= ')'
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_26); 
+            otherlv_0=(Token)match(input,41,FOLLOW_21); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCoordinatesAccess().getLeftParenthesisKeyword_0());
             		
@@ -2933,7 +2933,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,42,FOLLOW_26); 
+            otherlv_2=(Token)match(input,42,FOLLOW_21); 
 
             			newLeafNode(otherlv_2, grammarAccess.getCoordinatesAccess().getCommaKeyword_2());
             		
@@ -3915,8 +3915,8 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000002L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x00F8000000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000040000000L});

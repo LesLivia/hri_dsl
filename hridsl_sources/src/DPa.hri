@@ -17,7 +17,7 @@ poi CUP1 in (1400.0, 450.0)
 poi RECH in (4350.0, 450.0)
 
 define robots:
-robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
 
 define humans:
 human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill normal

@@ -34,7 +34,7 @@ Robots:
 	'define' 'robots' ':' robots+=(Robot)+;
 
 Robot:
-	'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=INT;
+	'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=FLOAT;
 
 enum Type:
 	TURTLEBOT3_BURGER='turtlebot3_burger'

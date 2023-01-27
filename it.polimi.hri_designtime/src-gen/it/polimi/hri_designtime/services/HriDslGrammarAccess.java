@@ -310,13 +310,13 @@ public class HriDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cTypeTypeEnumRuleCall_5_0 = (RuleCall)cTypeAssignment_5.eContents().get(0);
 		private final Keyword cChargeKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cCharge_percentageAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cCharge_percentageINTTerminalRuleCall_7_0 = (RuleCall)cCharge_percentageAssignment_7.eContents().get(0);
+		private final RuleCall cCharge_percentageFLOATTerminalRuleCall_7_0 = (RuleCall)cCharge_percentageAssignment_7.eContents().get(0);
 		
 		//Robot:
-		//    'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=INT;
+		//    'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=FLOAT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=INT
+		//'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=FLOAT
 		public Group getGroup() { return cGroup; }
 		
 		//'robot'
@@ -349,11 +349,11 @@ public class HriDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'charge'
 		public Keyword getChargeKeyword_6() { return cChargeKeyword_6; }
 		
-		//charge_percentage=INT
+		//charge_percentage=FLOAT
 		public Assignment getCharge_percentageAssignment_7() { return cCharge_percentageAssignment_7; }
 		
-		//INT
-		public RuleCall getCharge_percentageINTTerminalRuleCall_7_0() { return cCharge_percentageINTTerminalRuleCall_7_0; }
+		//FLOAT
+		public RuleCall getCharge_percentageFLOATTerminalRuleCall_7_0() { return cCharge_percentageFLOATTerminalRuleCall_7_0; }
 	}
 	public class HumansElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.polimi.hri_designtime.HriDsl.Humans");
@@ -1210,7 +1210,7 @@ public class HriDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Robot:
-	//    'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=INT;
+	//    'robot' name=ID 'in' coordinates=Coordinates 'type' type=Type 'charge' charge_percentage=FLOAT;
 	public RobotElements getRobotAccess() {
 		return pRobot;
 	}

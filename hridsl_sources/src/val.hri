@@ -1,0 +1,96 @@
+parameter length_unit cm
+
+define layout lA:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi OFF1 in (110.0, 200.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)	
+
+define robots:
+robot Tbot in (115.0,200.0) type turtlebot3_wafflepi charge 99.0
+
+define humans:
+human P1a in (110.0, 200.0) speed 40.0  dexterity 1 is young_healthy freewill normal
+
+define mission HF:
+do robot_leader for P1a with target CUP1
+
+define queries of mission HF:
+compute probability_of_success with duration 75 runs "auto"
+compute probability_of_success with duration 53 runs "auto"
+compute probability_of_success with duration 50 runs "auto"
+compute probability_of_success with duration 40 runs "auto"
+compute probability_of_success with duration 34 runs "auto"
+compute expected_charge with duration 75 runs "auto"
+compute expected_fatigue with duration 75 runs "auto"
+
+define layout lB:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi OFF1 in (110.0, 200.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)	
+
+define robots:
+robot Tbot in (115.0,200.0) type turtlebot3_wafflepi charge 75.0
+
+define humans:
+human P1b in (110.0,200.0) speed 40.0  dexterity 1 is elderly_sick freewill normal
+
+define mission HL:
+do robot_follower for P1b with target CUP1
+
+define queries of mission HL:
+compute probability_of_success with duration 50 runs "auto"
+compute probability_of_success with duration 42 runs "auto"
+compute probability_of_success with duration 38 runs "auto"
+compute probability_of_success with duration 35 runs "auto"
+compute probability_of_success with duration 33 runs "auto"
+compute expected_charge with duration 50 runs "auto"
+compute expected_fatigue with duration 50 runs "auto"
+
+define layout lC:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi OFF1 in (110.0, 200.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)	
+
+define robots:
+robot Tbot in (115.0, 200.0) type turtlebot3_wafflepi charge 0.8
+
+define humans:
+human P1c in (110.0, 200.0) speed 40.0 dexterity 1 is young_healthy freewill normal
+
+define mission LB:
+do robot_leader for P1c with target CUP1
+
+define queries of mission LB:
+compute probability_of_success with duration 150 runs "auto"
+compute expected_charge with duration 150 runs "auto"
+compute expected_fatigue with duration 150 runs "auto"

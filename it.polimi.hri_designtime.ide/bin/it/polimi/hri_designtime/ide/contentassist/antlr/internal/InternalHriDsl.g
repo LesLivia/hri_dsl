@@ -3411,9 +3411,9 @@ rule__Robot__Charge_percentageAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0()); }
-		RULE_INT
-		{ after(grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0()); }
+		{ before(grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0()); }
+		RULE_FLOAT
+		{ after(grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0()); }
 	)
 ;
 finally {

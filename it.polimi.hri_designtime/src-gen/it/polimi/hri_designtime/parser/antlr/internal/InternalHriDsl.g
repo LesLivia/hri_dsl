@@ -671,9 +671,9 @@ ruleRobot returns [EObject current=null]
 		}
 		(
 			(
-				lv_charge_percentage_7_0=RULE_INT
+				lv_charge_percentage_7_0=RULE_FLOAT
 				{
-					newLeafNode(lv_charge_percentage_7_0, grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0());
+					newLeafNode(lv_charge_percentage_7_0, grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -683,7 +683,7 @@ ruleRobot returns [EObject current=null]
 						$current,
 						"charge_percentage",
 						lv_charge_percentage_7_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"it.polimi.hri_designtime.HriDsl.FLOAT");
 				}
 			)
 		)

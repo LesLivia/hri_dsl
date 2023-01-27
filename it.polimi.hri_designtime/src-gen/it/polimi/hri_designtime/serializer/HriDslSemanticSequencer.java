@@ -312,7 +312,7 @@ public class HriDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Robot returns Robot
 	 *
 	 * Constraint:
-	 *     (name=ID coordinates=Coordinates type=Type charge_percentage=INT)
+	 *     (name=ID coordinates=Coordinates type=Type charge_percentage=FLOAT)
 	 */
 	protected void sequence_Robot(ISerializationContext context, Robot semanticObject) {
 		if (errorAcceptor != null) {
@@ -329,7 +329,7 @@ public class HriDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		feeder.accept(grammarAccess.getRobotAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getRobotAccess().getCoordinatesCoordinatesParserRuleCall_3_0(), semanticObject.getCoordinates());
 		feeder.accept(grammarAccess.getRobotAccess().getTypeTypeEnumRuleCall_5_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getRobotAccess().getCharge_percentageINTTerminalRuleCall_7_0(), semanticObject.getCharge_percentage());
+		feeder.accept(grammarAccess.getRobotAccess().getCharge_percentageFLOATTerminalRuleCall_7_0(), semanticObject.getCharge_percentage());
 		feeder.finish();
 	}
 	
