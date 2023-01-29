@@ -4,6 +4,7 @@
 package it.polimi.hri_designtime.generator;
 
 import it.polimi.hri_designtime.hriDsl.Assignment;
+import it.polimi.hri_designtime.hriDsl.Coordinates;
 import it.polimi.hri_designtime.hriDsl.Human;
 import it.polimi.hri_designtime.hriDsl.Mission;
 import it.polimi.hri_designtime.hriDsl.Parameter;
@@ -192,17 +193,16 @@ public class Json {
     return _builder;
   }
   
-  public CharSequence pHumans(final int id, final Human h, final Assignment a, final Point p) {
+  public CharSequence pHumans(final int id, final Human h, final Assignment a, final Point target, final Coordinates start, final String name, final int same_as_id) {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _equals = h.getName().equals(a.getClient());
       if (_equals) {
         {
-          boolean _equals_1 = a.getTarget().equals(p.getName());
+          boolean _equals_1 = a.getTarget().equals(target.getName());
           if (_equals_1) {
             _builder.append("{ \"name\": \"");
-            String _name = h.getName();
-            _builder.append(_name);
+            _builder.append(name);
             _builder.append("\", \"h_id\": ");
             _builder.append(id);
             _builder.append(", \"v\": ");
@@ -323,16 +323,16 @@ public class Json {
             }
             _builder.append(_switchResult_2);
             _builder.append("\", \"start\": [");
-            float _x = h.getCoordinates().getX();
+            float _x = start.getX();
             _builder.append(_x);
             _builder.append(", ");
-            float _y = h.getCoordinates().getY();
+            float _y = start.getY();
             _builder.append(_y);
             _builder.append("], \"dest\": [");
-            float _x_1 = p.getCoordinates().getX();
+            float _x_1 = target.getCoordinates().getX();
             _builder.append(_x_1);
             _builder.append(", ");
-            float _y_1 = p.getCoordinates().getY();
+            float _y_1 = target.getCoordinates().getY();
             _builder.append(_y_1);
             _builder.append("], \"dext\": ");
             int _xifexpression = (int) 0;
@@ -344,7 +344,9 @@ public class Json {
               _xifexpression = h.getDext();
             }
             _builder.append(_xifexpression);
-            _builder.append(", \"same_as\": -1, \"path\": -1 }");
+            _builder.append(", \"same_as\": ");
+            _builder.append(same_as_id);
+            _builder.append(", \"path\": -1 }");
           }
         }
       }
@@ -379,25 +381,25 @@ public class Json {
     _builder.append("\n\t\t", "\t");
     int hid = 1;
     {
-      EList<Human> _humans = scenario.getHumans().getHumans();
+      EList<Assignment> _assignments = mission.getAssignments();
       boolean _hasElements_1 = false;
-      for(final Human h : _humans) {
+      for(final Assignment m : _assignments) {
         if (!_hasElements_1) {
           _hasElements_1 = true;
         } else {
           _builder.appendImmediate(",\n\t\t", "\t");
         }
         int _plusPlus = hid++;
-        final Function1<Assignment, Boolean> _function = (Assignment a) -> {
-          return Boolean.valueOf(a.getClient().equals(h.getName()));
+        final Function1<Human, Boolean> _function = (Human h) -> {
+          return Boolean.valueOf(h.getName().equals(m.getClient()));
         };
         final Function1<Point, Boolean> _function_1 = (Point p) -> {
-          final Function1<Assignment, Boolean> _function_2 = (Assignment a) -> {
-            return Boolean.valueOf(a.getClient().equals(h.getName()));
-          };
-          return Boolean.valueOf(p.getName().equals(IterableExtensions.<Assignment>findFirst(mission.getAssignments(), _function_2).getTarget()));
+          return Boolean.valueOf(p.getName().equals(m.getTarget()));
         };
-        CharSequence _pHumans = this.pHumans(_plusPlus, h, IterableExtensions.<Assignment>findFirst(mission.getAssignments(), _function), IterableExtensions.<Point>findFirst(scenario.getFloor().getPoints(), _function_1));
+        final Function1<Human, Boolean> _function_2 = (Human h) -> {
+          return Boolean.valueOf(h.getName().equals(m.getClient()));
+        };
+        CharSequence _pHumans = this.pHumans(_plusPlus, IterableExtensions.<Human>findFirst(scenario.getHumans().getHumans(), _function), m, IterableExtensions.<Point>findFirst(scenario.getFloor().getPoints(), _function_1), this.op.get_start(m, mission.getAssignments(), scenario.getFloor().getPoints(), IterableExtensions.<Human>findFirst(scenario.getHumans().getHumans(), _function_2)), this.op.get_name(m, mission.getAssignments()), this.op.get_same_as_id(m, mission.getAssignments()));
         _builder.append(_pHumans, "\t");
       }
     }

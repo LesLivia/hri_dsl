@@ -13,7 +13,7 @@ area a9 in (1945.0,0.0) (2670.0,695.0)
 area a10 in (1352.0,110.0) (3155.0,425.0)
 poi OFF1 in (110.0, 200.0)
 poi CUP1 in (1400.0, 450.0)
-poi RECH in (4350.0, 450.0)	
+poi RECH in (4350.0, 450.0)
 
 define robots:
 robot Tbot in (110.0,200.0) type turtlebot3_wafflepi charge 99.0
@@ -31,7 +31,15 @@ compute probability_of_success with duration 50 runs "auto"
 compute probability_of_success with duration 40 runs "auto"
 compute probability_of_success with duration 34 runs "auto"
 compute expected_charge with duration 75 runs "auto"
+compute expected_charge with duration 53 runs "auto"
+compute expected_charge with duration 50 runs "auto"
+compute expected_charge with duration 40 runs "auto"
+compute expected_charge with duration 34 runs "auto"
 compute expected_fatigue with duration 75 runs "auto"
+compute expected_fatigue with duration 53 runs "auto"
+compute expected_fatigue with duration 50 runs "auto"
+compute expected_fatigue with duration 40 runs "auto"
+compute expected_fatigue with duration 34 runs "auto"
 
 define layout lB:
 area a1 in (0.0,110.0) (1550.0,299.5)
@@ -64,7 +72,15 @@ compute probability_of_success with duration 38 runs "auto"
 compute probability_of_success with duration 35 runs "auto"
 compute probability_of_success with duration 33 runs "auto"
 compute expected_charge with duration 50 runs "auto"
+compute expected_charge with duration 42 runs "auto"
+compute expected_charge with duration 38 runs "auto"
+compute expected_charge with duration 35 runs "auto"
+compute expected_charge with duration 33 runs "auto"
 compute expected_fatigue with duration 50 runs "auto"
+compute expected_fatigue with duration 42 runs "auto"
+compute expected_fatigue with duration 38 runs "auto"
+compute expected_fatigue with duration 35 runs "auto"
+compute expected_fatigue with duration 33 runs "auto"
 
 define layout lC:
 area a1 in (0.0,110.0) (1550.0,299.5)

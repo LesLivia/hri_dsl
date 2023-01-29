@@ -22,6 +22,8 @@ import it.polimi.hri_designtime.hriDsl.Point
 import it.polimi.hri_designtime.hriDsl.Mission
 import it.polimi.hri_designtime.hriDsl.Floor
 import it.polimi.hri_designtime.hriDsl.Parameter
+import it.polimi.hri_designtime.hriDsl.Coordinates
+import org.eclipse.emf.common.util.EList
 
 /**
  * Generates code from your model files on save.
@@ -77,9 +79,9 @@ class Json{
 	def pIntersect(float x, float y)'''
 	{ "p": [«x», «y»] }'''
 	
-	def pHumans(int id, Human h, Assignment a, Point p)'''
-	«IF h.name.equals(a.client)»«IF a.target.equals(p.name)»
-		{ "name": "«h.name»", "h_id": «id», "v": «h.speed», "ptrn": "«switch a.pattern.toString { case "robot_leader" : '''FOLLOWER'''
+	def pHumans(int id, Human h, Assignment a, Point target, Coordinates start, String name, int same_as_id)'''
+	«IF h.name.equals(a.client)»«IF a.target.equals(target.name)»
+		{ "name": "«name»", "h_id": «id», "v": «h.speed», "ptrn": "«switch a.pattern.toString { case "robot_leader" : '''FOLLOWER'''
 			  									  				   			   			case "robot_follower" : '''LEADER'''
 			  									  				   			   			case "robot_transporter" : '''RECIPIENT'''
 			  									  				   			  			case "robot_competitor" : '''COMPETITOR''' 
@@ -94,12 +96,12 @@ class Json{
 			  									  				   			   			  									  				   			  									  		   case "high" : '''h'''
 			  									  				   			   			  									  				   			  									  		   case "low" : '''l'''
 			  									  				   			   			  									  				   			  									  		   case "disabled" : '''d'''								                                                              				                                         
-			  									  				   			   			  									  				   			  									  		   default : null}»", "start": [«h.coordinates.x», «h.coordinates.y»], "dest": [«p.coordinates.x», «p.coordinates.y»], "dext": «(h.dext == 0? -1: h.dext)», "same_as": -1, "path": -1 }«ENDIF»«ENDIF»'''
+			  									  				   			   			  									  				   			  									  		   default : null}»", "start": [«start.x», «start.y»], "dest": [«target.coordinates.x», «target.coordinates.y»], "dext": «(h.dext == 0? -1: h.dext)», "same_as": «same_as_id», "path": -1 }«ENDIF»«ENDIF»'''
 	
 	def pScenario(Scenario scenario, Mission mission, ArrayList<Point2D.Float> intersections, int max_n, Parameter parameter)'''
 	{
 		"queries": [«'\n\t\t'»«FOR q: mission.queries.queries SEPARATOR ',\n\t\t' »«pQuery(q)»«ENDFOR»],
-		"humans": [«'\n\t\t'»«var hid = 1»«FOR h: scenario.humans.humans SEPARATOR ',\n\t\t' »«pHumans(hid++, h, mission.assignments.findFirst[a| a.client.equals(h.name)], scenario.floor.points.findFirst[p| p.name.equals(mission.assignments.findFirst[a| a.client.equals(h.name)].target)])»«ENDFOR»],
+		"humans": [«'\n\t\t'»«var hid = 1»«FOR m: mission.assignments SEPARATOR ',\n\t\t' »«pHumans(hid++, scenario.humans.humans.findFirst[h | h.name.equals(m.client)], m, scenario.floor.points.findFirst[p| p.name.equals(m.target)], op.get_start(m, mission.assignments, scenario.floor.points, scenario.humans.humans.findFirst[h | h.name.equals(m.client)]), op.get_name(m, mission.assignments), op.get_same_as_id(m, mission.assignments))»«ENDFOR»],
 		"robots": [«'\n\t\t'»«var rid = 1»«FOR r: scenario.robots.robots SEPARATOR ',\n\t\t' »«pRobots(rid++, r, parameter)»«ENDFOR»],
 		"areas": [«'\n\t\t'»«FOR s: scenario.floor.surfaces SEPARATOR ',\n\t\t' »«pAreas(s)»«ENDFOR»],
 		"intersect": [«'\n\t\t'»«FOR i: intersections SEPARATOR ',\n\t\t'»«pIntersect(i.getX.floatValue, i.getY.floatValue)»«ENDFOR»], 
@@ -233,6 +235,47 @@ class Operations{
 	
 	def perctovoltage(float f){
 		return f/100.0f*(12.2f-10.9f)+10.9f
+	}
+	
+	def get_start(Assignment a, EList<Assignment> mission, EList<Point> points, Human h) {
+		var a_i = mission.indexOf(a);
+		var last = h.coordinates;
+		for(a_2: mission) {
+			var a_j = mission.indexOf(a_2);
+			if (a_i>a_j && a_2.client.equals(a.client)) {
+					last = points.findFirst[p| p.name.equals(a_2.target)].coordinates
+			}
+		}
+		return last
+	}
+	
+	def get_name(Assignment a, EList<Assignment> mission) {
+		var i = 0;
+		var a_i = mission.indexOf(a);
+		for(a_2: mission) {
+			var a_j = mission.indexOf(a_2);
+			if (a_i>a_j && a_2.client.equals(a.client)) {
+					i+=1;
+			}
+		}
+		if(i>0) {
+			return a.client + "_" + i
+		}
+		else {
+			return a.client
+		}
+	}
+	
+	def get_same_as_id(Assignment a, EList<Assignment> mission) {
+		var same_as = -1;
+		var a_i = mission.indexOf(a);
+		for(a_2: mission) {
+			var a_j = mission.indexOf(a_2);
+			if (a_i>a_j && a_2.client.equals(a.client)) {
+					return a_j+1
+			}
+		}
+		return same_as
 	}
 	
 }

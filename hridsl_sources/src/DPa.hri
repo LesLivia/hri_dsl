@@ -26,7 +26,7 @@ human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill
 define mission DPa:
 do robot_leader for P1a with target R1b
 do robot_follower for D1a with target CUP1
-do robot_follower for D1a with target R2 
+do robot_follower for D1a with target R2
 do robot_leader for P1a with target R2
 
 define queries of mission DPa:

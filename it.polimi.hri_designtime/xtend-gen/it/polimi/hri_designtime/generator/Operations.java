@@ -3,8 +3,12 @@
  */
 package it.polimi.hri_designtime.generator;
 
+import it.polimi.hri_designtime.hriDsl.Assignment;
+import it.polimi.hri_designtime.hriDsl.Coordinates;
 import it.polimi.hri_designtime.hriDsl.Floor;
+import it.polimi.hri_designtime.hriDsl.Human;
 import it.polimi.hri_designtime.hriDsl.Parameter;
+import it.polimi.hri_designtime.hriDsl.Point;
 import it.polimi.hri_designtime.hriDsl.Surface;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -189,5 +193,57 @@ public class Operations {
   
   public float perctovoltage(final float f) {
     return (((f / 100.0f) * (12.2f - 10.9f)) + 10.9f);
+  }
+  
+  public Coordinates get_start(final Assignment a, final EList<Assignment> mission, final EList<Point> points, final Human h) {
+    int a_i = mission.indexOf(a);
+    Coordinates last = h.getCoordinates();
+    for (final Assignment a_2 : mission) {
+      {
+        int a_j = mission.indexOf(a_2);
+        if (((a_i > a_j) && a_2.getClient().equals(a.getClient()))) {
+          final Function1<Point, Boolean> _function = (Point p) -> {
+            return Boolean.valueOf(p.getName().equals(a_2.getTarget()));
+          };
+          last = IterableExtensions.<Point>findFirst(points, _function).getCoordinates();
+        }
+      }
+    }
+    return last;
+  }
+  
+  public String get_name(final Assignment a, final EList<Assignment> mission) {
+    int i = 0;
+    int a_i = mission.indexOf(a);
+    for (final Assignment a_2 : mission) {
+      {
+        int a_j = mission.indexOf(a_2);
+        if (((a_i > a_j) && a_2.getClient().equals(a.getClient()))) {
+          int _i = i;
+          i = (_i + 1);
+        }
+      }
+    }
+    if ((i > 0)) {
+      String _client = a.getClient();
+      String _plus = (_client + "_");
+      return (_plus + Integer.valueOf(i));
+    } else {
+      return a.getClient();
+    }
+  }
+  
+  public int get_same_as_id(final Assignment a, final EList<Assignment> mission) {
+    int same_as = (-1);
+    int a_i = mission.indexOf(a);
+    for (final Assignment a_2 : mission) {
+      {
+        int a_j = mission.indexOf(a_2);
+        if (((a_i > a_j) && a_2.getClient().equals(a.getClient()))) {
+          return (a_j + 1);
+        }
+      }
+    }
+    return same_as;
   }
 }
