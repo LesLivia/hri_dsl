@@ -5,11 +5,16 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate hriDsl "http://www.polimi.it/hri_designtime/HriDsl"
 
 Model:
-	parameter=(Parameter)? scenarios+=(Scenario)*;
+	parameter+=(Parameter)? scenarios+=(Scenario)*; //prima era senza + davanti all'uguale per parameter
 
 Parameter:
-	'parameter' 'length_unit' length_unit=Length_unit;
+	'parameter' 'length_unit' length_unit=Length_unit
+	&'parameter' 'free_will_model' free_will_model=Free_will_model;
 
+
+enum Free_will_model:
+	BASE = 'b'
+	|EXTENDED = 'e';
 enum Length_unit:
 	METER='m' 
 	|KILOMETER='km'
@@ -59,7 +64,15 @@ enum Free_will_profile:
 	NORMAL='normal' 
 	| HIGH='high'
 	| LOW='low'
-	| DISABLED='disabled';
+	| DISABLED='disabled'
+	| BUSY= 'busy'
+	| FREE= 'free'
+	| UNEXPERIENCED= 'unexperienced'
+	| EXPERIENCED= 'experienced'
+	| CRITICAL= 'critical'
+	| STABLE= 'stable'
+	| DISTRACTED= 'distracted'
+	| FOCUSED= 'focused';
 	
 Mission:
 	'define' 'mission' name=ID ':' assignments+=(Assignment)+ queries=Queries;

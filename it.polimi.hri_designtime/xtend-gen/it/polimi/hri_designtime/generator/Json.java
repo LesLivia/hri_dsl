@@ -23,7 +23,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class Json {
   private Operations op = new Operations();
-  
+
   public CharSequence pQuery(final Query q) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"type\": \"");
@@ -79,7 +79,7 @@ public class Json {
     _builder.append(" }");
     return _builder;
   }
-  
+
   public CharSequence pRobots(final int id, final Robot r, final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"name\": \"");
@@ -152,7 +152,7 @@ public class Json {
     _builder.append(" }");
     return _builder;
   }
-  
+
   public CharSequence pAreas(final Surface s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"p1\": [");
@@ -182,7 +182,7 @@ public class Json {
     _builder.append("] }");
     return _builder;
   }
-  
+
   public CharSequence pIntersect(final float x, final float y) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"p\": [");
@@ -192,7 +192,7 @@ public class Json {
     _builder.append("] }");
     return _builder;
   }
-  
+
   public CharSequence pHumans(final int id, final Human h, final Assignment a, final Point target, final Coordinates start, final String name, final int same_as_id) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -314,6 +314,46 @@ public class Json {
                   _builder_15.append("d");
                   _switchResult_2 = _builder_15;
                   break;
+                case "busy":
+                  StringConcatenation _builder_16 = new StringConcatenation();
+                  _builder_16.append("busy");
+                  _switchResult_2 = _builder_16;
+                  break;
+                case "free":
+                  StringConcatenation _builder_17 = new StringConcatenation();
+                  _builder_17.append("free");
+                  _switchResult_2 = _builder_17;
+                  break;
+                case "unexperienced":
+                  StringConcatenation _builder_18 = new StringConcatenation();
+                  _builder_18.append("unexp");
+                  _switchResult_2 = _builder_18;
+                  break;
+                case "experienced":
+                  StringConcatenation _builder_19 = new StringConcatenation();
+                  _builder_19.append("exp");
+                  _switchResult_2 = _builder_19;
+                  break;
+                case "critical":
+                  StringConcatenation _builder_20 = new StringConcatenation();
+                  _builder_20.append("crit");
+                  _switchResult_2 = _builder_20;
+                  break;
+                case "stable":
+                  StringConcatenation _builder_21 = new StringConcatenation();
+                  _builder_21.append("stable");
+                  _switchResult_2 = _builder_21;
+                  break;
+                case "distracted":
+                  StringConcatenation _builder_22 = new StringConcatenation();
+                  _builder_22.append("distr");
+                  _switchResult_2 = _builder_22;
+                  break;
+                case "focused":
+                  StringConcatenation _builder_23 = new StringConcatenation();
+                  _builder_23.append("foc");
+                  _switchResult_2 = _builder_23;
+                  break;
                 default:
                   _switchResult_2 = null;
                   break;
@@ -353,7 +393,7 @@ public class Json {
     }
     return _builder;
   }
-  
+
   public CharSequence pScenario(final Scenario scenario, final Mission mission, final ArrayList<Point2D.Float> intersections, final int max_n, final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{");

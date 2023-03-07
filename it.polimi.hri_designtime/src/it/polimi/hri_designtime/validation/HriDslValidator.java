@@ -13,6 +13,8 @@ import org.eclipse.xtext.validation.Check;
 import it.polimi.hri_designtime.hriDsl.Assignment;
 import it.polimi.hri_designtime.hriDsl.HriDslPackage;
 import it.polimi.hri_designtime.hriDsl.Floor;
+import it.polimi.hri_designtime.hriDsl.Free_will_model;
+import it.polimi.hri_designtime.hriDsl.Free_will_profile;
 import it.polimi.hri_designtime.hriDsl.Human;
 import it.polimi.hri_designtime.hriDsl.Humans;
 import it.polimi.hri_designtime.hriDsl.Mission;
@@ -402,6 +404,26 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		if(mission.getQueries() != null && mission.getQueries().getMission() != null) {
 			if(mission.getName() != null && !mission.getName().equals(mission.getQueries().getMission())){
 				error("Error: " + "Mission name \"" + mission.getQueries().getMission() + "\" should be \"" + mission.getName() + "\".", mission.getQueries(), HriDslPackage.Literals.QUERIES__MISSION, HriDslValidator.QUERY_DEFINITION, mission.getQueries().getMission(),mission.getName());
+			}
+		}
+	}
+	@Check
+	public void checkFreeWillModel(Free_will_model free_will_model, Scenario scenario) {
+		if (free_will_model == Free_will_model.BASE) {
+			for (Human human: scenario.getHumans().getHumans()){
+				if (human.getFree_will_profile() != Free_will_profile.NORMAL && human.getFree_will_profile() != Free_will_profile.LOW && human.getFree_will_profile() != Free_will_profile.HIGH) {
+					System.out.println("Dentro If");
+					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the base human free will profile.", human ,HriDslPackage.Literals.PARAMETER__FREE_WILL_MODEL);
+				}
+			}
+
+			
+			
+		}else if(free_will_model == Free_will_model.EXTENDED) {
+			for (Human human: scenario.getHumans().getHumans()){
+				if (human.getFree_will_profile() == Free_will_profile.LOW || human.getFree_will_profile() == Free_will_profile.HIGH) {
+					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the Extended human free will profile.", HriDslPackage.Literals.PARAMETER__FREE_WILL_MODEL);
+				}
 			}
 		}
 	}

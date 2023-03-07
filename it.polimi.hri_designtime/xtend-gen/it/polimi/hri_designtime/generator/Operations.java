@@ -22,19 +22,19 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class Operations {
   private int max_n;
-  
+
   private HashSet<Point2D.Float> n;
-  
+
   private Rectangle2D temp_r;
-  
+
   private HashSet<Point2D.Float> points_set;
-  
+
   private HashMap<Rectangle2D.Float, HashSet<Point2D.Float>> rectangles_map;
-  
+
   private ArrayList<Rectangle2D.Float> rectangles;
-  
+
   private HashMap<Point2D.Float, HashSet<Rectangle2D.Float>> points_map;
-  
+
   public int computeIntersections(final Floor floor, final ArrayList<Point2D.Float> intersections) {
     HashSet<Point2D.Float> _hashSet = new HashSet<Point2D.Float>();
     this.points_set = _hashSet;
@@ -100,7 +100,7 @@ public class Operations {
     intersections.addAll(this.points_set);
     return this.max_n;
   }
-  
+
   private boolean intersects(final Rectangle2D.Float r1, final Rectangle2D.Float r2) {
     if ((((r1.getY() < (r2.getY() + r2.getHeight())) && ((r1.getY() + r1.getHeight()) > r2.getY())) && ((r1.getX() < (r2.getX() + r2.getWidth())) && ((r1.getX() + r1.getWidth()) > r2.getX())))) {
       return true;
@@ -108,7 +108,7 @@ public class Operations {
       return false;
     }
   }
-  
+
   public Rectangle2D.Float createRectangle(final Surface s) {
     if (((s.getVertices().getVertex_A().getX() != s.getVertices().getVertex_C().getX()) && (s.getVertices().getVertex_A().getY() != s.getVertices().getVertex_C().getY()))) {
       float _x = s.getVertices().getVertex_A().getX();
@@ -165,7 +165,7 @@ public class Operations {
     }
     return null;
   }
-  
+
   public float unitConversion(final float f, final Parameter parameter) {
     String length_unit = "m";
     float result = 0.0f;
@@ -190,11 +190,11 @@ public class Operations {
     }
     return result;
   }
-  
+
   public float perctovoltage(final float f) {
     return (((f / 100.0f) * (12.2f - 10.9f)) + 10.9f);
   }
-  
+
   public Coordinates get_start(final Assignment a, final EList<Assignment> mission, final EList<Point> points, final Human h) {
     int a_i = mission.indexOf(a);
     Coordinates last = h.getCoordinates();
@@ -211,7 +211,7 @@ public class Operations {
     }
     return last;
   }
-  
+
   public String get_name(final Assignment a, final EList<Assignment> mission) {
     int i = 0;
     int a_i = mission.indexOf(a);
@@ -232,7 +232,7 @@ public class Operations {
       return a.getClient();
     }
   }
-  
+
   public int get_same_as_id(final Assignment a, final EList<Assignment> mission) {
     int same_as = (-1);
     int a_i = mission.indexOf(a);

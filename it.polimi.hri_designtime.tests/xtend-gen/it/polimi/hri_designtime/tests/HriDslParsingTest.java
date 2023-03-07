@@ -23,7 +23,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class HriDslParsingTest {
   @Inject
   private ParseHelper<Model> parseHelper;
-  
+
   @Test
   public void loadModel() {
     try {
