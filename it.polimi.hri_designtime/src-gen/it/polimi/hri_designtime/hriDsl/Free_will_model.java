@@ -11,135 +11,91 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Free will model</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see it.polimi.hri_designtime.hriDsl.HriDslPackage#getType()
+ * @see it.polimi.hri_designtime.hriDsl.HriDslPackage#getFree_will_model()
  * @model
  * @generated
  */
-public enum Type implements Enumerator
+public enum Free_will_model implements Enumerator
 {
   /**
-   * The '<em><b>TURTLEBOT3 BURGER</b></em>' literal object.
+   * The '<em><b>BASE</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #TURTLEBOT3_BURGER_VALUE
+   * @see #BASE_VALUE
    * @generated
    * @ordered
    */
-  TURTLEBOT3_BURGER(0, "TURTLEBOT3_BURGER", "turtlebot3_burger"),
+  BASE(0, "BASE", "b"),
 
   /**
-   * The '<em><b>TURTLEBOT3 WAFFLEPI</b></em>' literal object.
+   * The '<em><b>EXTENDED</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #TURTLEBOT3_WAFFLEPI_VALUE
+   * @see #EXTENDED_VALUE
    * @generated
    * @ordered
    */
-  TURTLEBOT3_WAFFLEPI(1, "TURTLEBOT3_WAFFLEPI", "turtlebot3_wafflepi"),
+  EXTENDED(1, "EXTENDED", "e");
 
   /**
-   * The '<em><b>TIAGO</b></em>' literal object.
+   * The '<em><b>BASE</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #TIAGO_VALUE
+   * @see #BASE
+   * @model literal="b"
    * @generated
    * @ordered
    */
-  TIAGO(2, "TIAGO", "tiago"),
+  public static final int BASE_VALUE = 0;
 
   /**
-   * The '<em><b>PEPPER</b></em>' literal object.
+   * The '<em><b>EXTENDED</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #PEPPER_VALUE
+   * @see #EXTENDED
+   * @model literal="e"
    * @generated
    * @ordered
    */
-  PEPPER(3, "PEPPER", "pepper");
+  public static final int EXTENDED_VALUE = 1;
 
   /**
-   * The '<em><b>TURTLEBOT3 BURGER</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #TURTLEBOT3_BURGER
-   * @model literal="turtlebot3_burger"
-   * @generated
-   * @ordered
-   */
-  public static final int TURTLEBOT3_BURGER_VALUE = 0;
-
-  /**
-   * The '<em><b>TURTLEBOT3 WAFFLEPI</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #TURTLEBOT3_WAFFLEPI
-   * @model literal="turtlebot3_wafflepi"
-   * @generated
-   * @ordered
-   */
-  public static final int TURTLEBOT3_WAFFLEPI_VALUE = 1;
-
-  /**
-   * The '<em><b>TIAGO</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #TIAGO
-   * @model literal="tiago"
-   * @generated
-   * @ordered
-   */
-  public static final int TIAGO_VALUE = 2;
-
-  /**
-   * The '<em><b>PEPPER</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #PEPPER
-   * @model literal="pepper"
-   * @generated
-   * @ordered
-   */
-  public static final int PEPPER_VALUE = 3;
-
-  /**
-   * An array of all the '<em><b>Type</b></em>' enumerators.
+   * An array of all the '<em><b>Free will model</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final Type[] VALUES_ARRAY =
-    new Type[]
+  private static final Free_will_model[] VALUES_ARRAY =
+    new Free_will_model[]
     {
-      TURTLEBOT3_BURGER,
-      TURTLEBOT3_WAFFLEPI,
-      TIAGO,
-      PEPPER,
+      BASE,
+      EXTENDED,
     };
 
   /**
-   * A public read-only list of all the '<em><b>Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Free will model</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<Type> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<Free_will_model> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Free will model</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static Type get(String literal)
+  public static Free_will_model get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      Type result = VALUES_ARRAY[i];
+      Free_will_model result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -149,18 +105,18 @@ public enum Type implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>Free will model</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static Type getByName(String name)
+  public static Free_will_model getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      Type result = VALUES_ARRAY[i];
+      Free_will_model result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -170,21 +126,19 @@ public enum Type implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Free will model</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static Type get(int value)
+  public static Free_will_model get(int value)
   {
     switch (value)
     {
-      case TURTLEBOT3_BURGER_VALUE: return TURTLEBOT3_BURGER;
-      case TURTLEBOT3_WAFFLEPI_VALUE: return TURTLEBOT3_WAFFLEPI;
-      case TIAGO_VALUE: return TIAGO;
-      case PEPPER_VALUE: return PEPPER;
+      case BASE_VALUE: return BASE;
+      case EXTENDED_VALUE: return EXTENDED;
     }
     return null;
   }
@@ -216,7 +170,7 @@ public enum Type implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private Type(int value, String name, String literal)
+  private Free_will_model(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -268,4 +222,4 @@ public enum Type implements Enumerator
     return literal;
   }
   
-} //Type
+} //Free_will_model

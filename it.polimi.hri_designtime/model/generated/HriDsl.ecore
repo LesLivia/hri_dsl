@@ -2,13 +2,18 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hriDsl" nsURI="http://www.polimi.it/hri_designtime/HriDsl" nsPrefix="hriDsl">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//Parameter"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" upperBound="-1"
         eType="#//Scenario" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length_unit" eType="#//Length_unit"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="free_will_model" eType="#//Free_will_model"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Free_will_model">
+    <eLiterals name="BASE" literal="b"/>
+    <eLiterals name="EXTENDED" value="1" literal="e"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Length_unit">
     <eLiterals name="METER" literal="m"/>
@@ -90,6 +95,14 @@
     <eLiterals name="HIGH" value="1" literal="high"/>
     <eLiterals name="LOW" value="2" literal="low"/>
     <eLiterals name="DISABLED" value="3" literal="disabled"/>
+    <eLiterals name="BUSY" value="4" literal="busy"/>
+    <eLiterals name="FREE" value="5" literal="free"/>
+    <eLiterals name="UNEXPERIENCED" value="6" literal="unexperienced"/>
+    <eLiterals name="EXPERIENCED" value="7" literal="experienced"/>
+    <eLiterals name="CRITICAL" value="8" literal="critical"/>
+    <eLiterals name="STABLE" value="9" literal="stable"/>
+    <eLiterals name="DISTRACTED" value="10" literal="distracted"/>
+    <eLiterals name="FOCUSED" value="11" literal="focused"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mission">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
