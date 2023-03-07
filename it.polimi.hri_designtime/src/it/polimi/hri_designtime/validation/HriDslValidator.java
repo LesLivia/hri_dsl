@@ -408,12 +408,15 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		}
 	}
 	@Check
-	public void checkFreeWillModel(Free_will_model free_will_model, Scenario scenario) {
+	public void checkFreeWillModel(Model m) {
+		Free_will_model free_will_model = m.getParameter().get(0).getFree_will_model();
+		Scenario scenario = m.getScenarios().get(0);
+		
 		if (free_will_model == Free_will_model.BASE) {
 			for (Human human: scenario.getHumans().getHumans()){
 				if (human.getFree_will_profile() != Free_will_profile.NORMAL && human.getFree_will_profile() != Free_will_profile.LOW && human.getFree_will_profile() != Free_will_profile.HIGH) {
 					System.out.println("Dentro If");
-					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the base human free will profile.", human ,HriDslPackage.Literals.PARAMETER__FREE_WILL_MODEL);
+					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the base human free will profile.", human, HriDslPackage.Literals.HUMAN__FREE_WILL_PROFILE);
 				}
 			}
 
@@ -422,7 +425,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 		}else if(free_will_model == Free_will_model.EXTENDED) {
 			for (Human human: scenario.getHumans().getHumans()){
 				if (human.getFree_will_profile() == Free_will_profile.LOW || human.getFree_will_profile() == Free_will_profile.HIGH) {
-					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the Extended human free will profile.", HriDslPackage.Literals.PARAMETER__FREE_WILL_MODEL);
+					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the Extended human free will profile.", human, HriDslPackage.Literals.HUMAN__FREE_WILL_PROFILE);
 				}
 			}
 		}
