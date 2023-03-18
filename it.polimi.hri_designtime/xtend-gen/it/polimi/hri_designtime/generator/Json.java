@@ -23,7 +23,46 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class Json {
   private Operations op = new Operations();
-
+  
+  public CharSequence pParam(final Parameter p) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{ \"behavioral_model\" : \"");
+    CharSequence _switchResult = null;
+    String _string = p.getFree_will_model().toString();
+    if (_string != null) {
+      switch (_string) {
+        case "base":
+          StringConcatenation _builder_1 = new StringConcatenation();
+          _builder_1.append("random");
+          _switchResult = _builder_1;
+          break;
+        case "err":
+          StringConcatenation _builder_2 = new StringConcatenation();
+          _builder_2.append("errors");
+          _switchResult = _builder_2;
+          break;
+        case "cog1":
+          StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append("cognitive_v1");
+          _switchResult = _builder_3;
+          break;
+        case "cog2":
+          StringConcatenation _builder_4 = new StringConcatenation();
+          _builder_4.append("cognitive_v2");
+          _switchResult = _builder_4;
+          break;
+        default:
+          _switchResult = null;
+          break;
+      }
+    } else {
+      _switchResult = null;
+    }
+    _builder.append(_switchResult);
+    _builder.append("\"}");
+    return _builder;
+  }
+  
   public CharSequence pQuery(final Query q) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"type\": \"");
@@ -79,7 +118,7 @@ public class Json {
     _builder.append(" }");
     return _builder;
   }
-
+  
   public CharSequence pRobots(final int id, final Robot r, final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"name\": \"");
@@ -152,7 +191,7 @@ public class Json {
     _builder.append(" }");
     return _builder;
   }
-
+  
   public CharSequence pAreas(final Surface s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"p1\": [");
@@ -182,7 +221,7 @@ public class Json {
     _builder.append("] }");
     return _builder;
   }
-
+  
   public CharSequence pIntersect(final float x, final float y) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{ \"p\": [");
@@ -192,7 +231,7 @@ public class Json {
     _builder.append("] }");
     return _builder;
   }
-
+  
   public CharSequence pHumans(final int id, final Human h, final Assignment a, final Point target, final Coordinates start, final String name, final int same_as_id) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -393,11 +432,18 @@ public class Json {
     }
     return _builder;
   }
-
+  
   public CharSequence pScenario(final Scenario scenario, final Mission mission, final ArrayList<Point2D.Float> intersections, final int max_n, final Parameter parameter) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\"global_params\": [");
+    _builder.append("\n\t\t", "\t");
+    CharSequence _pParam = this.pParam(parameter);
+    _builder.append(_pParam, "\t");
+    _builder.append("],");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("\"queries\": [");
     _builder.append("\n\t\t", "\t");

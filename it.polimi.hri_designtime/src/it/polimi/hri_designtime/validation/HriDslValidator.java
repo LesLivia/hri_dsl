@@ -13,7 +13,7 @@ import org.eclipse.xtext.validation.Check;
 import it.polimi.hri_designtime.hriDsl.Assignment;
 import it.polimi.hri_designtime.hriDsl.HriDslPackage;
 import it.polimi.hri_designtime.hriDsl.Floor;
-import it.polimi.hri_designtime.hriDsl.Free_will_model;
+import it.polimi.hri_designtime.hriDsl.Behavioral_model;
 import it.polimi.hri_designtime.hriDsl.Free_will_profile;
 import it.polimi.hri_designtime.hriDsl.Human;
 import it.polimi.hri_designtime.hriDsl.Humans;
@@ -409,10 +409,10 @@ public class HriDslValidator extends AbstractHriDslValidator {
 	}
 	@Check
 	public void checkFreeWillModel(Model m) {
-		Free_will_model free_will_model = m.getParameter().get(0).getFree_will_model();
+		Behavioral_model free_will_model = m.getParameter().get(0).getFree_will_model();
 		Scenario scenario = m.getScenarios().get(0);
 		
-		if (free_will_model == Free_will_model.BASE) {
+		if (free_will_model == Behavioral_model.BASE) {
 			for (Human human: scenario.getHumans().getHumans()){
 				if (human.getFree_will_profile() != Free_will_profile.NORMAL && human.getFree_will_profile() != Free_will_profile.LOW && human.getFree_will_profile() != Free_will_profile.HIGH) {
 					System.out.println("Dentro If");
@@ -422,7 +422,7 @@ public class HriDslValidator extends AbstractHriDslValidator {
 
 			
 			
-		}else if(free_will_model == Free_will_model.EXTENDED) {
+		}else if(free_will_model == Behavioral_model.ERRORS) {
 			for (Human human: scenario.getHumans().getHumans()){
 				if (human.getFree_will_profile() == Free_will_profile.LOW || human.getFree_will_profile() == Free_will_profile.HIGH) {
 					error("Error: " + "Human Freewill Profile is \"" + human.getFree_will_profile() + "\" instead it should be one of the Extended human free will profile.", human, HriDslPackage.Literals.HUMAN__FREE_WILL_PROFILE);

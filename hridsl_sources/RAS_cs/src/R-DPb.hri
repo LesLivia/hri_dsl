@@ -1,5 +1,5 @@
 parameter length_unit cm
-parameter free_will_model b
+parameter free_will_model base
 
 define layout lB:
 area a1 in (0.0,110.0) (1550.0,299.5)

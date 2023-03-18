@@ -1,0 +1,258 @@
+parameter length_unit cm
+parameter free_will_model err
+
+define layout l_crit:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill critical
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+
+define mission DP1_crit:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_crit:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_stable:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill stable
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+
+define mission DP1_stable:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_stable:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_inatt:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill distracted
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+
+define mission DP1_inatt:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_inatt:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_foc:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill focused
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+
+define mission DP1_foc:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_foc:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_busy:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill normal
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill busy
+
+define mission DP1_busy:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_busy:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_ava:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill normal
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill free
+
+define mission DP1_ava:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_ava:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_inex:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill normal
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill unexperienced
+
+define mission DP1_inex:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_inex:
+compute probability_of_success with duration 400 runs "auto"
+
+define layout l_exp:
+area a1 in (0.0,110.0) (1550.0,299.5)
+area a2 in (0.0,110.0) (185.0,850.0)
+area a3 in (0.0,672.5) (1550.0,850.0)
+area a4 in (1352.0,110.0) (1550.0,850.0)
+area a5 in (2970.0,110.0) (4512.5,299.5)
+area a6 in (2970.0,110.0) (3155.0,850.0)
+area a7 in (2970.0,672.5) (4512.5,850.0)
+area a8 in (4322.0,110.0) (4512.5,850.0)
+area a9 in (1945.0,0.0) (2670.0,695.0)
+area a10 in (1352.0,110.0) (3155.0,425.0)
+poi R1b in (400.0, 270.0)
+poi R2 in (4000.0, 270.0)
+poi CUP1 in (1400.0, 450.0)
+poi RECH in (4350.0, 450.0)
+
+define robots:
+robot Tbot in (2300.0,400.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1a in (2300.0, 600.0) speed 40.0  dexterity 1 is young_sick freewill normal
+human D1a in (4400.0, 700.0) speed 100.0 dexterity 1 is elderly_healthy freewill experienced
+
+define mission DP1_exp:
+do robot_leader for P1a with target R1b
+do robot_follower for D1a with target CUP1
+do robot_follower for D1a with target R2
+do robot_leader for P1a with target R2
+
+define queries of mission DP1_exp:
+compute probability_of_success with duration 400 runs "auto"

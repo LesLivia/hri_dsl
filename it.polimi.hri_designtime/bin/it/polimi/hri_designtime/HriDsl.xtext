@@ -9,12 +9,14 @@ Model:
 
 Parameter:
 	'parameter' 'length_unit' length_unit=Length_unit
-	&'parameter' 'free_will_model' free_will_model=Free_will_model;
+	&'parameter' 'free_will_model' free_will_model=Behavioral_model;
 
 
-enum Free_will_model:
-	BASE = 'b'
-	|EXTENDED = 'e';
+enum Behavioral_model:
+	BASE = 'base'
+	|ERRORS = 'err'
+	|COG_V1 = 'cog1'
+	|COG_V2 = 'cog2';
 enum Length_unit:
 	METER='m' 
 	|KILOMETER='km'

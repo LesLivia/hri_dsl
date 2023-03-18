@@ -9,11 +9,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length_unit" eType="#//Length_unit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="free_will_model" eType="#//Free_will_model"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="free_will_model" eType="#//Behavioral_model"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Free_will_model">
-    <eLiterals name="BASE" literal="b"/>
-    <eLiterals name="EXTENDED" value="1" literal="e"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Behavioral_model">
+    <eLiterals name="BASE" literal="base"/>
+    <eLiterals name="ERRORS" value="1" literal="err"/>
+    <eLiterals name="COG_V1" value="2" literal="cog1"/>
+    <eLiterals name="COG_V2" value="3" literal="cog2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Length_unit">
     <eLiterals name="METER" literal="m"/>

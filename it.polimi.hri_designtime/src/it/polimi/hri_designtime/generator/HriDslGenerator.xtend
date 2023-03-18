@@ -48,7 +48,7 @@ class HriDslGenerator extends AbstractGenerator {
 			intersections = new ArrayList<Point2D.Float>();
 			max_n = op.computeIntersections(scenario.floor, intersections);
 			for(mission: scenario.missions){
-				fsa.generateFile(resource.URI.lastSegment.substring(0,resource.URI.lastSegment.indexOf(".hri")) + '/' + scenario.floor.floor_name + '/' + mission.name +'.json', f.pScenario( scenario, mission, intersections, max_n, parameter));
+				fsa.generateFile(resource.URI.lastSegment.substring(0,resource.URI.lastSegment.indexOf(".hri")) + '/' + scenario.floor.floor_name + '/' + mission.name +'.json', f.pScenario(scenario, mission, intersections, max_n, parameter));
 			}
 		}		
 	}
@@ -57,6 +57,13 @@ class HriDslGenerator extends AbstractGenerator {
 class Json{
 	
 	Operations op = new Operations();
+
+	def pParam(Parameter p)'''
+	{ "behavioral_model" : "«switch p.getFree_will_model.toString { case "base" : '''random'''
+	  									  case "err" : '''errors'''
+	  									  case "cog1": '''cognitive_v1'''
+	  									  case "cog2": '''cognitive_v2'''
+	  									  default : null}»"}'''
 		
 	def pQuery(Query q)'''
 	{ "type": "«switch q.query_type.toString { case "simulation" : '''sim'''
@@ -108,6 +115,7 @@ class Json{
 	
 	def pScenario(Scenario scenario, Mission mission, ArrayList<Point2D.Float> intersections, int max_n, Parameter parameter)'''
 	{
+		"global_params": [«'\n\t\t'»«pParam(parameter)»],
 		"queries": [«'\n\t\t'»«FOR q: mission.queries.queries SEPARATOR ',\n\t\t' »«pQuery(q)»«ENDFOR»],
 		"humans": [«'\n\t\t'»«var hid = 1»«FOR m: mission.assignments SEPARATOR ',\n\t\t' »«pHumans(hid++, scenario.humans.humans.findFirst[h | h.name.equals(m.client)], m, scenario.floor.points.findFirst[p| p.name.equals(m.target)], op.get_start(m, mission.assignments, scenario.floor.points, scenario.humans.humans.findFirst[h | h.name.equals(m.client)]), op.get_name(m, mission.assignments), op.get_same_as_id(m, mission.assignments))»«ENDFOR»],
 		"robots": [«'\n\t\t'»«var rid = 1»«FOR r: scenario.robots.robots SEPARATOR ',\n\t\t' »«pRobots(rid++, r, parameter)»«ENDFOR»],

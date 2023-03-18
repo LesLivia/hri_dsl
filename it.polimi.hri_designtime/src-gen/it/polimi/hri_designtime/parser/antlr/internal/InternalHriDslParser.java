@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parameter'", "'length_unit'", "'free_will_model'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'", "'b'", "'e'", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'busy'", "'free'", "'unexperienced'", "'experienced'", "'critical'", "'stable'", "'distracted'", "'focused'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_FLOAT", "RULE_INT", "RULE_STRING", "RULE_DEC", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parameter'", "'length_unit'", "'free_will_model'", "'define'", "'layout'", "':'", "'area'", "'in'", "'poi'", "'robots'", "'robot'", "'type'", "'charge'", "'humans'", "'human'", "'speed'", "'dexterity'", "'is'", "'freewill'", "'mission'", "'do'", "'for'", "'with'", "'target'", "'queries'", "'of'", "'compute'", "'duration'", "'runs'", "'('", "','", "')'", "'base'", "'err'", "'cog1'", "'cog2'", "'m'", "'km'", "'cm'", "'turtlebot3_burger'", "'turtlebot3_wafflepi'", "'tiago'", "'pepper'", "'young_healthy'", "'young_sick'", "'elderly_healthy'", "'elderly_sick'", "'covid_patient'", "'normal'", "'high'", "'low'", "'disabled'", "'busy'", "'free'", "'unexperienced'", "'experienced'", "'critical'", "'stable'", "'distracted'", "'focused'", "'robot_leader'", "'robot_follower'", "'robot_transporter'", "'robot_competitor'", "'robot_rescuer'", "'robot_client'", "'simulation'", "'probability_of_success'", "'expected_fatigue'", "'expected_charge'", "'probability_of_failure'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -90,6 +90,8 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final int T__76=76;
     public static final int T__80=80;
     public static final int T__81=81;
+    public static final int T__82=82;
+    public static final int T__83=83;
     public static final int RULE_WS=11;
     public static final int RULE_ANY_OTHER=12;
     public static final int T__48=48;
@@ -349,7 +351,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameter"
-    // InternalHriDsl.g:129:1: ruleParameter returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?) ) ) ;
+    // InternalHriDsl.g:129:1: ruleParameter returns [EObject current=null] : ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?) ) ) ;
     public final EObject ruleParameter() throws RecognitionException {
         EObject current = null;
 
@@ -366,22 +368,22 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:135:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?) ) ) )
-            // InternalHriDsl.g:136:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalHriDsl.g:135:2: ( ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?) ) ) )
+            // InternalHriDsl.g:136:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?) ) )
             {
-            // InternalHriDsl.g:136:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?) ) )
-            // InternalHriDsl.g:137:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?) )
+            // InternalHriDsl.g:136:2: ( ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?) ) )
+            // InternalHriDsl.g:137:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?) )
             {
-            // InternalHriDsl.g:137:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?) )
-            // InternalHriDsl.g:138:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?)
+            // InternalHriDsl.g:137:3: ( ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?) )
+            // InternalHriDsl.g:138:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?)
             {
              
             			  getUnorderedGroupHelper().enter(grammarAccess.getParameterAccess().getUnorderedGroup());
             			
-            // InternalHriDsl.g:141:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?)
-            // InternalHriDsl.g:142:5: ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+ {...}?
+            // InternalHriDsl.g:141:4: ( ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?)
+            // InternalHriDsl.g:142:5: ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+ {...}?
             {
-            // InternalHriDsl.g:142:5: ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) ) )+
+            // InternalHriDsl.g:142:5: ( ({...}? => ( ({...}? => (otherlv_1= 'parameter' otherlv_2= 'length_unit' ( (lv_length_unit_3_0= ruleLength_unit ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) ) )+
             int cnt3=0;
             loop3:
             do {
@@ -485,28 +487,28 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalHriDsl.g:181:3: ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) )
+            	    // InternalHriDsl.g:181:3: ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) )
             	    {
-            	    // InternalHriDsl.g:181:3: ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) ) )
-            	    // InternalHriDsl.g:182:4: {...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) )
+            	    // InternalHriDsl.g:181:3: ({...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) ) )
+            	    // InternalHriDsl.g:182:4: {...}? => ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) )
             	    {
             	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getParameterAccess().getUnorderedGroup(), 1) ) {
             	        throw new FailedPredicateException(input, "ruleParameter", "getUnorderedGroupHelper().canSelect(grammarAccess.getParameterAccess().getUnorderedGroup(), 1)");
             	    }
-            	    // InternalHriDsl.g:182:103: ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) ) )
-            	    // InternalHriDsl.g:183:5: ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) )
+            	    // InternalHriDsl.g:182:103: ( ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) ) )
+            	    // InternalHriDsl.g:183:5: ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) )
             	    {
 
             	    					getUnorderedGroupHelper().select(grammarAccess.getParameterAccess().getUnorderedGroup(), 1);
             	    				
-            	    // InternalHriDsl.g:186:8: ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) ) )
-            	    // InternalHriDsl.g:186:9: {...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) )
+            	    // InternalHriDsl.g:186:8: ({...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) ) )
+            	    // InternalHriDsl.g:186:9: {...}? => (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) )
             	    {
             	    if ( !((true)) ) {
             	        throw new FailedPredicateException(input, "ruleParameter", "true");
             	    }
-            	    // InternalHriDsl.g:186:18: (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) ) )
-            	    // InternalHriDsl.g:186:19: otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleFree_will_model ) )
+            	    // InternalHriDsl.g:186:18: (otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) ) )
+            	    // InternalHriDsl.g:186:19: otherlv_4= 'parameter' otherlv_5= 'free_will_model' ( (lv_free_will_model_6_0= ruleBehavioral_model ) )
             	    {
             	    otherlv_4=(Token)match(input,13,FOLLOW_7); 
 
@@ -516,17 +518,17 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             	    								newLeafNode(otherlv_5, grammarAccess.getParameterAccess().getFree_will_modelKeyword_1_1());
             	    							
-            	    // InternalHriDsl.g:194:8: ( (lv_free_will_model_6_0= ruleFree_will_model ) )
-            	    // InternalHriDsl.g:195:9: (lv_free_will_model_6_0= ruleFree_will_model )
+            	    // InternalHriDsl.g:194:8: ( (lv_free_will_model_6_0= ruleBehavioral_model ) )
+            	    // InternalHriDsl.g:195:9: (lv_free_will_model_6_0= ruleBehavioral_model )
             	    {
-            	    // InternalHriDsl.g:195:9: (lv_free_will_model_6_0= ruleFree_will_model )
-            	    // InternalHriDsl.g:196:10: lv_free_will_model_6_0= ruleFree_will_model
+            	    // InternalHriDsl.g:195:9: (lv_free_will_model_6_0= ruleBehavioral_model )
+            	    // InternalHriDsl.g:196:10: lv_free_will_model_6_0= ruleBehavioral_model
             	    {
 
-            	    										newCompositeNode(grammarAccess.getParameterAccess().getFree_will_modelFree_will_modelEnumRuleCall_1_2_0());
+            	    										newCompositeNode(grammarAccess.getParameterAccess().getFree_will_modelBehavioral_modelEnumRuleCall_1_2_0());
             	    									
             	    pushFollow(FOLLOW_6);
-            	    lv_free_will_model_6_0=ruleFree_will_model();
+            	    lv_free_will_model_6_0=ruleBehavioral_model();
 
             	    state._fsp--;
 
@@ -538,7 +540,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
             	    											current,
             	    											"free_will_model",
             	    											lv_free_will_model_6_0,
-            	    											"it.polimi.hri_designtime.HriDsl.Free_will_model");
+            	    											"it.polimi.hri_designtime.HriDsl.Behavioral_model");
             	    										afterParserOrEnumRuleCall();
             	    									
 
@@ -3180,48 +3182,64 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleCoordinates"
 
 
-    // $ANTLR start "ruleFree_will_model"
-    // InternalHriDsl.g:1370:1: ruleFree_will_model returns [Enumerator current=null] : ( (enumLiteral_0= 'b' ) | (enumLiteral_1= 'e' ) ) ;
-    public final Enumerator ruleFree_will_model() throws RecognitionException {
+    // $ANTLR start "ruleBehavioral_model"
+    // InternalHriDsl.g:1370:1: ruleBehavioral_model returns [Enumerator current=null] : ( (enumLiteral_0= 'base' ) | (enumLiteral_1= 'err' ) | (enumLiteral_2= 'cog1' ) | (enumLiteral_3= 'cog2' ) ) ;
+    public final Enumerator ruleBehavioral_model() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1376:2: ( ( (enumLiteral_0= 'b' ) | (enumLiteral_1= 'e' ) ) )
-            // InternalHriDsl.g:1377:2: ( (enumLiteral_0= 'b' ) | (enumLiteral_1= 'e' ) )
+            // InternalHriDsl.g:1376:2: ( ( (enumLiteral_0= 'base' ) | (enumLiteral_1= 'err' ) | (enumLiteral_2= 'cog1' ) | (enumLiteral_3= 'cog2' ) ) )
+            // InternalHriDsl.g:1377:2: ( (enumLiteral_0= 'base' ) | (enumLiteral_1= 'err' ) | (enumLiteral_2= 'cog1' ) | (enumLiteral_3= 'cog2' ) )
             {
-            // InternalHriDsl.g:1377:2: ( (enumLiteral_0= 'b' ) | (enumLiteral_1= 'e' ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
-
-            if ( (LA11_0==45) ) {
+            // InternalHriDsl.g:1377:2: ( (enumLiteral_0= 'base' ) | (enumLiteral_1= 'err' ) | (enumLiteral_2= 'cog1' ) | (enumLiteral_3= 'cog2' ) )
+            int alt11=4;
+            switch ( input.LA(1) ) {
+            case 45:
+                {
                 alt11=1;
-            }
-            else if ( (LA11_0==46) ) {
+                }
+                break;
+            case 46:
+                {
                 alt11=2;
-            }
-            else {
+                }
+                break;
+            case 47:
+                {
+                alt11=3;
+                }
+                break;
+            case 48:
+                {
+                alt11=4;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
+
             switch (alt11) {
                 case 1 :
-                    // InternalHriDsl.g:1378:3: (enumLiteral_0= 'b' )
+                    // InternalHriDsl.g:1378:3: (enumLiteral_0= 'base' )
                     {
-                    // InternalHriDsl.g:1378:3: (enumLiteral_0= 'b' )
-                    // InternalHriDsl.g:1379:4: enumLiteral_0= 'b'
+                    // InternalHriDsl.g:1378:3: (enumLiteral_0= 'base' )
+                    // InternalHriDsl.g:1379:4: enumLiteral_0= 'base'
                     {
                     enumLiteral_0=(Token)match(input,45,FOLLOW_2); 
 
-                    				current = grammarAccess.getFree_will_modelAccess().getBASEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getFree_will_modelAccess().getBASEEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getBehavioral_modelAccess().getBASEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getBehavioral_modelAccess().getBASEEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -3230,15 +3248,49 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1386:3: (enumLiteral_1= 'e' )
+                    // InternalHriDsl.g:1386:3: (enumLiteral_1= 'err' )
                     {
-                    // InternalHriDsl.g:1386:3: (enumLiteral_1= 'e' )
-                    // InternalHriDsl.g:1387:4: enumLiteral_1= 'e'
+                    // InternalHriDsl.g:1386:3: (enumLiteral_1= 'err' )
+                    // InternalHriDsl.g:1387:4: enumLiteral_1= 'err'
                     {
                     enumLiteral_1=(Token)match(input,46,FOLLOW_2); 
 
-                    				current = grammarAccess.getFree_will_modelAccess().getEXTENDEDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getFree_will_modelAccess().getEXTENDEDEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getBehavioral_modelAccess().getERRORSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getBehavioral_modelAccess().getERRORSEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalHriDsl.g:1394:3: (enumLiteral_2= 'cog1' )
+                    {
+                    // InternalHriDsl.g:1394:3: (enumLiteral_2= 'cog1' )
+                    // InternalHriDsl.g:1395:4: enumLiteral_2= 'cog1'
+                    {
+                    enumLiteral_2=(Token)match(input,47,FOLLOW_2); 
+
+                    				current = grammarAccess.getBehavioral_modelAccess().getCOG_V1EnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getBehavioral_modelAccess().getCOG_V1EnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalHriDsl.g:1402:3: (enumLiteral_3= 'cog2' )
+                    {
+                    // InternalHriDsl.g:1402:3: (enumLiteral_3= 'cog2' )
+                    // InternalHriDsl.g:1403:4: enumLiteral_3= 'cog2'
+                    {
+                    enumLiteral_3=(Token)match(input,48,FOLLOW_2); 
+
+                    				current = grammarAccess.getBehavioral_modelAccess().getCOG_V2EnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getBehavioral_modelAccess().getCOG_V2EnumLiteralDeclaration_3());
                     			
 
                     }
@@ -3265,11 +3317,11 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleFree_will_model"
+    // $ANTLR end "ruleBehavioral_model"
 
 
     // $ANTLR start "ruleLength_unit"
-    // InternalHriDsl.g:1397:1: ruleLength_unit returns [Enumerator current=null] : ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) ) ;
+    // InternalHriDsl.g:1413:1: ruleLength_unit returns [Enumerator current=null] : ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) ) ;
     public final Enumerator ruleLength_unit() throws RecognitionException {
         Enumerator current = null;
 
@@ -3281,23 +3333,23 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1403:2: ( ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) ) )
-            // InternalHriDsl.g:1404:2: ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) )
+            // InternalHriDsl.g:1419:2: ( ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) ) )
+            // InternalHriDsl.g:1420:2: ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) )
             {
-            // InternalHriDsl.g:1404:2: ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) )
+            // InternalHriDsl.g:1420:2: ( (enumLiteral_0= 'm' ) | (enumLiteral_1= 'km' ) | (enumLiteral_2= 'cm' ) )
             int alt12=3;
             switch ( input.LA(1) ) {
-            case 47:
+            case 49:
                 {
                 alt12=1;
                 }
                 break;
-            case 48:
+            case 50:
                 {
                 alt12=2;
                 }
                 break;
-            case 49:
+            case 51:
                 {
                 alt12=3;
                 }
@@ -3311,12 +3363,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             switch (alt12) {
                 case 1 :
-                    // InternalHriDsl.g:1405:3: (enumLiteral_0= 'm' )
+                    // InternalHriDsl.g:1421:3: (enumLiteral_0= 'm' )
                     {
-                    // InternalHriDsl.g:1405:3: (enumLiteral_0= 'm' )
-                    // InternalHriDsl.g:1406:4: enumLiteral_0= 'm'
+                    // InternalHriDsl.g:1421:3: (enumLiteral_0= 'm' )
+                    // InternalHriDsl.g:1422:4: enumLiteral_0= 'm'
                     {
-                    enumLiteral_0=(Token)match(input,47,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,49,FOLLOW_2); 
 
                     				current = grammarAccess.getLength_unitAccess().getMETEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLength_unitAccess().getMETEREnumLiteralDeclaration_0());
@@ -3328,12 +3380,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1413:3: (enumLiteral_1= 'km' )
+                    // InternalHriDsl.g:1429:3: (enumLiteral_1= 'km' )
                     {
-                    // InternalHriDsl.g:1413:3: (enumLiteral_1= 'km' )
-                    // InternalHriDsl.g:1414:4: enumLiteral_1= 'km'
+                    // InternalHriDsl.g:1429:3: (enumLiteral_1= 'km' )
+                    // InternalHriDsl.g:1430:4: enumLiteral_1= 'km'
                     {
-                    enumLiteral_1=(Token)match(input,48,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,50,FOLLOW_2); 
 
                     				current = grammarAccess.getLength_unitAccess().getKILOMETEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLength_unitAccess().getKILOMETEREnumLiteralDeclaration_1());
@@ -3345,12 +3397,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalHriDsl.g:1421:3: (enumLiteral_2= 'cm' )
+                    // InternalHriDsl.g:1437:3: (enumLiteral_2= 'cm' )
                     {
-                    // InternalHriDsl.g:1421:3: (enumLiteral_2= 'cm' )
-                    // InternalHriDsl.g:1422:4: enumLiteral_2= 'cm'
+                    // InternalHriDsl.g:1437:3: (enumLiteral_2= 'cm' )
+                    // InternalHriDsl.g:1438:4: enumLiteral_2= 'cm'
                     {
-                    enumLiteral_2=(Token)match(input,49,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,51,FOLLOW_2); 
 
                     				current = grammarAccess.getLength_unitAccess().getCENTIMETEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getLength_unitAccess().getCENTIMETEREnumLiteralDeclaration_2());
@@ -3384,7 +3436,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // InternalHriDsl.g:1432:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) ) ;
+    // InternalHriDsl.g:1448:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) ) ;
     public final Enumerator ruleType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3397,28 +3449,28 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1438:2: ( ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) ) )
-            // InternalHriDsl.g:1439:2: ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) )
+            // InternalHriDsl.g:1454:2: ( ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) ) )
+            // InternalHriDsl.g:1455:2: ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) )
             {
-            // InternalHriDsl.g:1439:2: ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) )
+            // InternalHriDsl.g:1455:2: ( (enumLiteral_0= 'turtlebot3_burger' ) | (enumLiteral_1= 'turtlebot3_wafflepi' ) | (enumLiteral_2= 'tiago' ) | (enumLiteral_3= 'pepper' ) )
             int alt13=4;
             switch ( input.LA(1) ) {
-            case 50:
+            case 52:
                 {
                 alt13=1;
                 }
                 break;
-            case 51:
+            case 53:
                 {
                 alt13=2;
                 }
                 break;
-            case 52:
+            case 54:
                 {
                 alt13=3;
                 }
                 break;
-            case 53:
+            case 55:
                 {
                 alt13=4;
                 }
@@ -3432,12 +3484,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             switch (alt13) {
                 case 1 :
-                    // InternalHriDsl.g:1440:3: (enumLiteral_0= 'turtlebot3_burger' )
+                    // InternalHriDsl.g:1456:3: (enumLiteral_0= 'turtlebot3_burger' )
                     {
-                    // InternalHriDsl.g:1440:3: (enumLiteral_0= 'turtlebot3_burger' )
-                    // InternalHriDsl.g:1441:4: enumLiteral_0= 'turtlebot3_burger'
+                    // InternalHriDsl.g:1456:3: (enumLiteral_0= 'turtlebot3_burger' )
+                    // InternalHriDsl.g:1457:4: enumLiteral_0= 'turtlebot3_burger'
                     {
-                    enumLiteral_0=(Token)match(input,50,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,52,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeAccess().getTURTLEBOT3_BURGEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTypeAccess().getTURTLEBOT3_BURGEREnumLiteralDeclaration_0());
@@ -3449,12 +3501,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1448:3: (enumLiteral_1= 'turtlebot3_wafflepi' )
+                    // InternalHriDsl.g:1464:3: (enumLiteral_1= 'turtlebot3_wafflepi' )
                     {
-                    // InternalHriDsl.g:1448:3: (enumLiteral_1= 'turtlebot3_wafflepi' )
-                    // InternalHriDsl.g:1449:4: enumLiteral_1= 'turtlebot3_wafflepi'
+                    // InternalHriDsl.g:1464:3: (enumLiteral_1= 'turtlebot3_wafflepi' )
+                    // InternalHriDsl.g:1465:4: enumLiteral_1= 'turtlebot3_wafflepi'
                     {
-                    enumLiteral_1=(Token)match(input,51,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,53,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeAccess().getTURTLEBOT3_WAFFLEPIEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTypeAccess().getTURTLEBOT3_WAFFLEPIEnumLiteralDeclaration_1());
@@ -3466,12 +3518,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalHriDsl.g:1456:3: (enumLiteral_2= 'tiago' )
+                    // InternalHriDsl.g:1472:3: (enumLiteral_2= 'tiago' )
                     {
-                    // InternalHriDsl.g:1456:3: (enumLiteral_2= 'tiago' )
-                    // InternalHriDsl.g:1457:4: enumLiteral_2= 'tiago'
+                    // InternalHriDsl.g:1472:3: (enumLiteral_2= 'tiago' )
+                    // InternalHriDsl.g:1473:4: enumLiteral_2= 'tiago'
                     {
-                    enumLiteral_2=(Token)match(input,52,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,54,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeAccess().getTIAGOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getTypeAccess().getTIAGOEnumLiteralDeclaration_2());
@@ -3483,12 +3535,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalHriDsl.g:1464:3: (enumLiteral_3= 'pepper' )
+                    // InternalHriDsl.g:1480:3: (enumLiteral_3= 'pepper' )
                     {
-                    // InternalHriDsl.g:1464:3: (enumLiteral_3= 'pepper' )
-                    // InternalHriDsl.g:1465:4: enumLiteral_3= 'pepper'
+                    // InternalHriDsl.g:1480:3: (enumLiteral_3= 'pepper' )
+                    // InternalHriDsl.g:1481:4: enumLiteral_3= 'pepper'
                     {
-                    enumLiteral_3=(Token)match(input,53,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,55,FOLLOW_2); 
 
                     				current = grammarAccess.getTypeAccess().getPEPPEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getTypeAccess().getPEPPEREnumLiteralDeclaration_3());
@@ -3522,7 +3574,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFatigue_profile"
-    // InternalHriDsl.g:1475:1: ruleFatigue_profile returns [Enumerator current=null] : ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) ) ;
+    // InternalHriDsl.g:1491:1: ruleFatigue_profile returns [Enumerator current=null] : ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) ) ;
     public final Enumerator ruleFatigue_profile() throws RecognitionException {
         Enumerator current = null;
 
@@ -3536,33 +3588,33 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1481:2: ( ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) ) )
-            // InternalHriDsl.g:1482:2: ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) )
+            // InternalHriDsl.g:1497:2: ( ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) ) )
+            // InternalHriDsl.g:1498:2: ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) )
             {
-            // InternalHriDsl.g:1482:2: ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) )
+            // InternalHriDsl.g:1498:2: ( (enumLiteral_0= 'young_healthy' ) | (enumLiteral_1= 'young_sick' ) | (enumLiteral_2= 'elderly_healthy' ) | (enumLiteral_3= 'elderly_sick' ) | (enumLiteral_4= 'covid_patient' ) )
             int alt14=5;
             switch ( input.LA(1) ) {
-            case 54:
+            case 56:
                 {
                 alt14=1;
                 }
                 break;
-            case 55:
+            case 57:
                 {
                 alt14=2;
                 }
                 break;
-            case 56:
+            case 58:
                 {
                 alt14=3;
                 }
                 break;
-            case 57:
+            case 59:
                 {
                 alt14=4;
                 }
                 break;
-            case 58:
+            case 60:
                 {
                 alt14=5;
                 }
@@ -3576,12 +3628,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             switch (alt14) {
                 case 1 :
-                    // InternalHriDsl.g:1483:3: (enumLiteral_0= 'young_healthy' )
+                    // InternalHriDsl.g:1499:3: (enumLiteral_0= 'young_healthy' )
                     {
-                    // InternalHriDsl.g:1483:3: (enumLiteral_0= 'young_healthy' )
-                    // InternalHriDsl.g:1484:4: enumLiteral_0= 'young_healthy'
+                    // InternalHriDsl.g:1499:3: (enumLiteral_0= 'young_healthy' )
+                    // InternalHriDsl.g:1500:4: enumLiteral_0= 'young_healthy'
                     {
-                    enumLiteral_0=(Token)match(input,54,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,56,FOLLOW_2); 
 
                     				current = grammarAccess.getFatigue_profileAccess().getYOUNG_HEALTHYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getFatigue_profileAccess().getYOUNG_HEALTHYEnumLiteralDeclaration_0());
@@ -3593,12 +3645,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1491:3: (enumLiteral_1= 'young_sick' )
+                    // InternalHriDsl.g:1507:3: (enumLiteral_1= 'young_sick' )
                     {
-                    // InternalHriDsl.g:1491:3: (enumLiteral_1= 'young_sick' )
-                    // InternalHriDsl.g:1492:4: enumLiteral_1= 'young_sick'
+                    // InternalHriDsl.g:1507:3: (enumLiteral_1= 'young_sick' )
+                    // InternalHriDsl.g:1508:4: enumLiteral_1= 'young_sick'
                     {
-                    enumLiteral_1=(Token)match(input,55,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,57,FOLLOW_2); 
 
                     				current = grammarAccess.getFatigue_profileAccess().getYOUNG_SICKEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getFatigue_profileAccess().getYOUNG_SICKEnumLiteralDeclaration_1());
@@ -3610,12 +3662,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalHriDsl.g:1499:3: (enumLiteral_2= 'elderly_healthy' )
+                    // InternalHriDsl.g:1515:3: (enumLiteral_2= 'elderly_healthy' )
                     {
-                    // InternalHriDsl.g:1499:3: (enumLiteral_2= 'elderly_healthy' )
-                    // InternalHriDsl.g:1500:4: enumLiteral_2= 'elderly_healthy'
+                    // InternalHriDsl.g:1515:3: (enumLiteral_2= 'elderly_healthy' )
+                    // InternalHriDsl.g:1516:4: enumLiteral_2= 'elderly_healthy'
                     {
-                    enumLiteral_2=(Token)match(input,56,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,58,FOLLOW_2); 
 
                     				current = grammarAccess.getFatigue_profileAccess().getELDERLY_HEALTHYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getFatigue_profileAccess().getELDERLY_HEALTHYEnumLiteralDeclaration_2());
@@ -3627,12 +3679,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalHriDsl.g:1507:3: (enumLiteral_3= 'elderly_sick' )
+                    // InternalHriDsl.g:1523:3: (enumLiteral_3= 'elderly_sick' )
                     {
-                    // InternalHriDsl.g:1507:3: (enumLiteral_3= 'elderly_sick' )
-                    // InternalHriDsl.g:1508:4: enumLiteral_3= 'elderly_sick'
+                    // InternalHriDsl.g:1523:3: (enumLiteral_3= 'elderly_sick' )
+                    // InternalHriDsl.g:1524:4: enumLiteral_3= 'elderly_sick'
                     {
-                    enumLiteral_3=(Token)match(input,57,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,59,FOLLOW_2); 
 
                     				current = grammarAccess.getFatigue_profileAccess().getELDERLY_SICKEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getFatigue_profileAccess().getELDERLY_SICKEnumLiteralDeclaration_3());
@@ -3644,12 +3696,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalHriDsl.g:1515:3: (enumLiteral_4= 'covid_patient' )
+                    // InternalHriDsl.g:1531:3: (enumLiteral_4= 'covid_patient' )
                     {
-                    // InternalHriDsl.g:1515:3: (enumLiteral_4= 'covid_patient' )
-                    // InternalHriDsl.g:1516:4: enumLiteral_4= 'covid_patient'
+                    // InternalHriDsl.g:1531:3: (enumLiteral_4= 'covid_patient' )
+                    // InternalHriDsl.g:1532:4: enumLiteral_4= 'covid_patient'
                     {
-                    enumLiteral_4=(Token)match(input,58,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,60,FOLLOW_2); 
 
                     				current = grammarAccess.getFatigue_profileAccess().getCOVID_PATIENTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getFatigue_profileAccess().getCOVID_PATIENTEnumLiteralDeclaration_4());
@@ -3683,7 +3735,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFree_will_profile"
-    // InternalHriDsl.g:1526:1: ruleFree_will_profile returns [Enumerator current=null] : ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) ) ;
+    // InternalHriDsl.g:1542:1: ruleFree_will_profile returns [Enumerator current=null] : ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) ) ;
     public final Enumerator ruleFree_will_profile() throws RecognitionException {
         Enumerator current = null;
 
@@ -3704,68 +3756,68 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1532:2: ( ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) ) )
-            // InternalHriDsl.g:1533:2: ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) )
+            // InternalHriDsl.g:1548:2: ( ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) ) )
+            // InternalHriDsl.g:1549:2: ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) )
             {
-            // InternalHriDsl.g:1533:2: ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) )
+            // InternalHriDsl.g:1549:2: ( (enumLiteral_0= 'normal' ) | (enumLiteral_1= 'high' ) | (enumLiteral_2= 'low' ) | (enumLiteral_3= 'disabled' ) | (enumLiteral_4= 'busy' ) | (enumLiteral_5= 'free' ) | (enumLiteral_6= 'unexperienced' ) | (enumLiteral_7= 'experienced' ) | (enumLiteral_8= 'critical' ) | (enumLiteral_9= 'stable' ) | (enumLiteral_10= 'distracted' ) | (enumLiteral_11= 'focused' ) )
             int alt15=12;
             switch ( input.LA(1) ) {
-            case 59:
+            case 61:
                 {
                 alt15=1;
                 }
                 break;
-            case 60:
+            case 62:
                 {
                 alt15=2;
                 }
                 break;
-            case 61:
+            case 63:
                 {
                 alt15=3;
                 }
                 break;
-            case 62:
+            case 64:
                 {
                 alt15=4;
                 }
                 break;
-            case 63:
+            case 65:
                 {
                 alt15=5;
                 }
                 break;
-            case 64:
+            case 66:
                 {
                 alt15=6;
                 }
                 break;
-            case 65:
+            case 67:
                 {
                 alt15=7;
                 }
                 break;
-            case 66:
+            case 68:
                 {
                 alt15=8;
                 }
                 break;
-            case 67:
+            case 69:
                 {
                 alt15=9;
                 }
                 break;
-            case 68:
+            case 70:
                 {
                 alt15=10;
                 }
                 break;
-            case 69:
+            case 71:
                 {
                 alt15=11;
                 }
                 break;
-            case 70:
+            case 72:
                 {
                 alt15=12;
                 }
@@ -3779,12 +3831,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // InternalHriDsl.g:1534:3: (enumLiteral_0= 'normal' )
+                    // InternalHriDsl.g:1550:3: (enumLiteral_0= 'normal' )
                     {
-                    // InternalHriDsl.g:1534:3: (enumLiteral_0= 'normal' )
-                    // InternalHriDsl.g:1535:4: enumLiteral_0= 'normal'
+                    // InternalHriDsl.g:1550:3: (enumLiteral_0= 'normal' )
+                    // InternalHriDsl.g:1551:4: enumLiteral_0= 'normal'
                     {
-                    enumLiteral_0=(Token)match(input,59,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,61,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getNORMALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getFree_will_profileAccess().getNORMALEnumLiteralDeclaration_0());
@@ -3796,12 +3848,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1542:3: (enumLiteral_1= 'high' )
+                    // InternalHriDsl.g:1558:3: (enumLiteral_1= 'high' )
                     {
-                    // InternalHriDsl.g:1542:3: (enumLiteral_1= 'high' )
-                    // InternalHriDsl.g:1543:4: enumLiteral_1= 'high'
+                    // InternalHriDsl.g:1558:3: (enumLiteral_1= 'high' )
+                    // InternalHriDsl.g:1559:4: enumLiteral_1= 'high'
                     {
-                    enumLiteral_1=(Token)match(input,60,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,62,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getHIGHEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getFree_will_profileAccess().getHIGHEnumLiteralDeclaration_1());
@@ -3813,12 +3865,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalHriDsl.g:1550:3: (enumLiteral_2= 'low' )
+                    // InternalHriDsl.g:1566:3: (enumLiteral_2= 'low' )
                     {
-                    // InternalHriDsl.g:1550:3: (enumLiteral_2= 'low' )
-                    // InternalHriDsl.g:1551:4: enumLiteral_2= 'low'
+                    // InternalHriDsl.g:1566:3: (enumLiteral_2= 'low' )
+                    // InternalHriDsl.g:1567:4: enumLiteral_2= 'low'
                     {
-                    enumLiteral_2=(Token)match(input,61,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,63,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getLOWEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getFree_will_profileAccess().getLOWEnumLiteralDeclaration_2());
@@ -3830,12 +3882,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalHriDsl.g:1558:3: (enumLiteral_3= 'disabled' )
+                    // InternalHriDsl.g:1574:3: (enumLiteral_3= 'disabled' )
                     {
-                    // InternalHriDsl.g:1558:3: (enumLiteral_3= 'disabled' )
-                    // InternalHriDsl.g:1559:4: enumLiteral_3= 'disabled'
+                    // InternalHriDsl.g:1574:3: (enumLiteral_3= 'disabled' )
+                    // InternalHriDsl.g:1575:4: enumLiteral_3= 'disabled'
                     {
-                    enumLiteral_3=(Token)match(input,62,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,64,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getDISABLEDEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getFree_will_profileAccess().getDISABLEDEnumLiteralDeclaration_3());
@@ -3847,12 +3899,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalHriDsl.g:1566:3: (enumLiteral_4= 'busy' )
+                    // InternalHriDsl.g:1582:3: (enumLiteral_4= 'busy' )
                     {
-                    // InternalHriDsl.g:1566:3: (enumLiteral_4= 'busy' )
-                    // InternalHriDsl.g:1567:4: enumLiteral_4= 'busy'
+                    // InternalHriDsl.g:1582:3: (enumLiteral_4= 'busy' )
+                    // InternalHriDsl.g:1583:4: enumLiteral_4= 'busy'
                     {
-                    enumLiteral_4=(Token)match(input,63,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,65,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getBUSYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getFree_will_profileAccess().getBUSYEnumLiteralDeclaration_4());
@@ -3864,12 +3916,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalHriDsl.g:1574:3: (enumLiteral_5= 'free' )
+                    // InternalHriDsl.g:1590:3: (enumLiteral_5= 'free' )
                     {
-                    // InternalHriDsl.g:1574:3: (enumLiteral_5= 'free' )
-                    // InternalHriDsl.g:1575:4: enumLiteral_5= 'free'
+                    // InternalHriDsl.g:1590:3: (enumLiteral_5= 'free' )
+                    // InternalHriDsl.g:1591:4: enumLiteral_5= 'free'
                     {
-                    enumLiteral_5=(Token)match(input,64,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,66,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getFREEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getFree_will_profileAccess().getFREEEnumLiteralDeclaration_5());
@@ -3881,12 +3933,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalHriDsl.g:1582:3: (enumLiteral_6= 'unexperienced' )
+                    // InternalHriDsl.g:1598:3: (enumLiteral_6= 'unexperienced' )
                     {
-                    // InternalHriDsl.g:1582:3: (enumLiteral_6= 'unexperienced' )
-                    // InternalHriDsl.g:1583:4: enumLiteral_6= 'unexperienced'
+                    // InternalHriDsl.g:1598:3: (enumLiteral_6= 'unexperienced' )
+                    // InternalHriDsl.g:1599:4: enumLiteral_6= 'unexperienced'
                     {
-                    enumLiteral_6=(Token)match(input,65,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,67,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getUNEXPERIENCEDEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getFree_will_profileAccess().getUNEXPERIENCEDEnumLiteralDeclaration_6());
@@ -3898,12 +3950,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalHriDsl.g:1590:3: (enumLiteral_7= 'experienced' )
+                    // InternalHriDsl.g:1606:3: (enumLiteral_7= 'experienced' )
                     {
-                    // InternalHriDsl.g:1590:3: (enumLiteral_7= 'experienced' )
-                    // InternalHriDsl.g:1591:4: enumLiteral_7= 'experienced'
+                    // InternalHriDsl.g:1606:3: (enumLiteral_7= 'experienced' )
+                    // InternalHriDsl.g:1607:4: enumLiteral_7= 'experienced'
                     {
-                    enumLiteral_7=(Token)match(input,66,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,68,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getEXPERIENCEDEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getFree_will_profileAccess().getEXPERIENCEDEnumLiteralDeclaration_7());
@@ -3915,12 +3967,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalHriDsl.g:1598:3: (enumLiteral_8= 'critical' )
+                    // InternalHriDsl.g:1614:3: (enumLiteral_8= 'critical' )
                     {
-                    // InternalHriDsl.g:1598:3: (enumLiteral_8= 'critical' )
-                    // InternalHriDsl.g:1599:4: enumLiteral_8= 'critical'
+                    // InternalHriDsl.g:1614:3: (enumLiteral_8= 'critical' )
+                    // InternalHriDsl.g:1615:4: enumLiteral_8= 'critical'
                     {
-                    enumLiteral_8=(Token)match(input,67,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,69,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getCRITICALEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getFree_will_profileAccess().getCRITICALEnumLiteralDeclaration_8());
@@ -3932,12 +3984,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalHriDsl.g:1606:3: (enumLiteral_9= 'stable' )
+                    // InternalHriDsl.g:1622:3: (enumLiteral_9= 'stable' )
                     {
-                    // InternalHriDsl.g:1606:3: (enumLiteral_9= 'stable' )
-                    // InternalHriDsl.g:1607:4: enumLiteral_9= 'stable'
+                    // InternalHriDsl.g:1622:3: (enumLiteral_9= 'stable' )
+                    // InternalHriDsl.g:1623:4: enumLiteral_9= 'stable'
                     {
-                    enumLiteral_9=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,70,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getSTABLEEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getFree_will_profileAccess().getSTABLEEnumLiteralDeclaration_9());
@@ -3949,12 +4001,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalHriDsl.g:1614:3: (enumLiteral_10= 'distracted' )
+                    // InternalHriDsl.g:1630:3: (enumLiteral_10= 'distracted' )
                     {
-                    // InternalHriDsl.g:1614:3: (enumLiteral_10= 'distracted' )
-                    // InternalHriDsl.g:1615:4: enumLiteral_10= 'distracted'
+                    // InternalHriDsl.g:1630:3: (enumLiteral_10= 'distracted' )
+                    // InternalHriDsl.g:1631:4: enumLiteral_10= 'distracted'
                     {
-                    enumLiteral_10=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,71,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getDISTRACTEDEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_10, grammarAccess.getFree_will_profileAccess().getDISTRACTEDEnumLiteralDeclaration_10());
@@ -3966,12 +4018,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalHriDsl.g:1622:3: (enumLiteral_11= 'focused' )
+                    // InternalHriDsl.g:1638:3: (enumLiteral_11= 'focused' )
                     {
-                    // InternalHriDsl.g:1622:3: (enumLiteral_11= 'focused' )
-                    // InternalHriDsl.g:1623:4: enumLiteral_11= 'focused'
+                    // InternalHriDsl.g:1638:3: (enumLiteral_11= 'focused' )
+                    // InternalHriDsl.g:1639:4: enumLiteral_11= 'focused'
                     {
-                    enumLiteral_11=(Token)match(input,70,FOLLOW_2); 
+                    enumLiteral_11=(Token)match(input,72,FOLLOW_2); 
 
                     				current = grammarAccess.getFree_will_profileAccess().getFOCUSEDEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_11, grammarAccess.getFree_will_profileAccess().getFOCUSEDEnumLiteralDeclaration_11());
@@ -4005,7 +4057,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePattern"
-    // InternalHriDsl.g:1633:1: rulePattern returns [Enumerator current=null] : ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) ) ;
+    // InternalHriDsl.g:1649:1: rulePattern returns [Enumerator current=null] : ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) ) ;
     public final Enumerator rulePattern() throws RecognitionException {
         Enumerator current = null;
 
@@ -4020,38 +4072,38 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1639:2: ( ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) ) )
-            // InternalHriDsl.g:1640:2: ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) )
+            // InternalHriDsl.g:1655:2: ( ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) ) )
+            // InternalHriDsl.g:1656:2: ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) )
             {
-            // InternalHriDsl.g:1640:2: ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) )
+            // InternalHriDsl.g:1656:2: ( (enumLiteral_0= 'robot_leader' ) | (enumLiteral_1= 'robot_follower' ) | (enumLiteral_2= 'robot_transporter' ) | (enumLiteral_3= 'robot_competitor' ) | (enumLiteral_4= 'robot_rescuer' ) | (enumLiteral_5= 'robot_client' ) )
             int alt16=6;
             switch ( input.LA(1) ) {
-            case 71:
+            case 73:
                 {
                 alt16=1;
                 }
                 break;
-            case 72:
+            case 74:
                 {
                 alt16=2;
                 }
                 break;
-            case 73:
+            case 75:
                 {
                 alt16=3;
                 }
                 break;
-            case 74:
+            case 76:
                 {
                 alt16=4;
                 }
                 break;
-            case 75:
+            case 77:
                 {
                 alt16=5;
                 }
                 break;
-            case 76:
+            case 78:
                 {
                 alt16=6;
                 }
@@ -4065,12 +4117,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             switch (alt16) {
                 case 1 :
-                    // InternalHriDsl.g:1641:3: (enumLiteral_0= 'robot_leader' )
+                    // InternalHriDsl.g:1657:3: (enumLiteral_0= 'robot_leader' )
                     {
-                    // InternalHriDsl.g:1641:3: (enumLiteral_0= 'robot_leader' )
-                    // InternalHriDsl.g:1642:4: enumLiteral_0= 'robot_leader'
+                    // InternalHriDsl.g:1657:3: (enumLiteral_0= 'robot_leader' )
+                    // InternalHriDsl.g:1658:4: enumLiteral_0= 'robot_leader'
                     {
-                    enumLiteral_0=(Token)match(input,71,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,73,FOLLOW_2); 
 
                     				current = grammarAccess.getPatternAccess().getROBOT_LEADEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getPatternAccess().getROBOT_LEADEREnumLiteralDeclaration_0());
@@ -4082,12 +4134,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1649:3: (enumLiteral_1= 'robot_follower' )
+                    // InternalHriDsl.g:1665:3: (enumLiteral_1= 'robot_follower' )
                     {
-                    // InternalHriDsl.g:1649:3: (enumLiteral_1= 'robot_follower' )
-                    // InternalHriDsl.g:1650:4: enumLiteral_1= 'robot_follower'
+                    // InternalHriDsl.g:1665:3: (enumLiteral_1= 'robot_follower' )
+                    // InternalHriDsl.g:1666:4: enumLiteral_1= 'robot_follower'
                     {
-                    enumLiteral_1=(Token)match(input,72,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,74,FOLLOW_2); 
 
                     				current = grammarAccess.getPatternAccess().getROBOT_FOLLOWEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getPatternAccess().getROBOT_FOLLOWEREnumLiteralDeclaration_1());
@@ -4099,12 +4151,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalHriDsl.g:1657:3: (enumLiteral_2= 'robot_transporter' )
+                    // InternalHriDsl.g:1673:3: (enumLiteral_2= 'robot_transporter' )
                     {
-                    // InternalHriDsl.g:1657:3: (enumLiteral_2= 'robot_transporter' )
-                    // InternalHriDsl.g:1658:4: enumLiteral_2= 'robot_transporter'
+                    // InternalHriDsl.g:1673:3: (enumLiteral_2= 'robot_transporter' )
+                    // InternalHriDsl.g:1674:4: enumLiteral_2= 'robot_transporter'
                     {
-                    enumLiteral_2=(Token)match(input,73,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,75,FOLLOW_2); 
 
                     				current = grammarAccess.getPatternAccess().getROBOT_TRANSPORTEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getPatternAccess().getROBOT_TRANSPORTEREnumLiteralDeclaration_2());
@@ -4116,12 +4168,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalHriDsl.g:1665:3: (enumLiteral_3= 'robot_competitor' )
+                    // InternalHriDsl.g:1681:3: (enumLiteral_3= 'robot_competitor' )
                     {
-                    // InternalHriDsl.g:1665:3: (enumLiteral_3= 'robot_competitor' )
-                    // InternalHriDsl.g:1666:4: enumLiteral_3= 'robot_competitor'
+                    // InternalHriDsl.g:1681:3: (enumLiteral_3= 'robot_competitor' )
+                    // InternalHriDsl.g:1682:4: enumLiteral_3= 'robot_competitor'
                     {
-                    enumLiteral_3=(Token)match(input,74,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,76,FOLLOW_2); 
 
                     				current = grammarAccess.getPatternAccess().getROBOT_COMPETITOREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getPatternAccess().getROBOT_COMPETITOREnumLiteralDeclaration_3());
@@ -4133,12 +4185,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalHriDsl.g:1673:3: (enumLiteral_4= 'robot_rescuer' )
+                    // InternalHriDsl.g:1689:3: (enumLiteral_4= 'robot_rescuer' )
                     {
-                    // InternalHriDsl.g:1673:3: (enumLiteral_4= 'robot_rescuer' )
-                    // InternalHriDsl.g:1674:4: enumLiteral_4= 'robot_rescuer'
+                    // InternalHriDsl.g:1689:3: (enumLiteral_4= 'robot_rescuer' )
+                    // InternalHriDsl.g:1690:4: enumLiteral_4= 'robot_rescuer'
                     {
-                    enumLiteral_4=(Token)match(input,75,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,77,FOLLOW_2); 
 
                     				current = grammarAccess.getPatternAccess().getROBOT_RESCUEREnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getPatternAccess().getROBOT_RESCUEREnumLiteralDeclaration_4());
@@ -4150,12 +4202,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalHriDsl.g:1681:3: (enumLiteral_5= 'robot_client' )
+                    // InternalHriDsl.g:1697:3: (enumLiteral_5= 'robot_client' )
                     {
-                    // InternalHriDsl.g:1681:3: (enumLiteral_5= 'robot_client' )
-                    // InternalHriDsl.g:1682:4: enumLiteral_5= 'robot_client'
+                    // InternalHriDsl.g:1697:3: (enumLiteral_5= 'robot_client' )
+                    // InternalHriDsl.g:1698:4: enumLiteral_5= 'robot_client'
                     {
-                    enumLiteral_5=(Token)match(input,76,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,78,FOLLOW_2); 
 
                     				current = grammarAccess.getPatternAccess().getROBOT_ASSISTANTEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getPatternAccess().getROBOT_ASSISTANTEnumLiteralDeclaration_5());
@@ -4189,7 +4241,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuery_type"
-    // InternalHriDsl.g:1692:1: ruleQuery_type returns [Enumerator current=null] : ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) ) ;
+    // InternalHriDsl.g:1708:1: ruleQuery_type returns [Enumerator current=null] : ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) ) ;
     public final Enumerator ruleQuery_type() throws RecognitionException {
         Enumerator current = null;
 
@@ -4203,33 +4255,33 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalHriDsl.g:1698:2: ( ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) ) )
-            // InternalHriDsl.g:1699:2: ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) )
+            // InternalHriDsl.g:1714:2: ( ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) ) )
+            // InternalHriDsl.g:1715:2: ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) )
             {
-            // InternalHriDsl.g:1699:2: ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) )
+            // InternalHriDsl.g:1715:2: ( (enumLiteral_0= 'simulation' ) | (enumLiteral_1= 'probability_of_success' ) | (enumLiteral_2= 'expected_fatigue' ) | (enumLiteral_3= 'expected_charge' ) | (enumLiteral_4= 'probability_of_failure' ) )
             int alt17=5;
             switch ( input.LA(1) ) {
-            case 77:
+            case 79:
                 {
                 alt17=1;
                 }
                 break;
-            case 78:
+            case 80:
                 {
                 alt17=2;
                 }
                 break;
-            case 79:
+            case 81:
                 {
                 alt17=3;
                 }
                 break;
-            case 80:
+            case 82:
                 {
                 alt17=4;
                 }
                 break;
-            case 81:
+            case 83:
                 {
                 alt17=5;
                 }
@@ -4243,12 +4295,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
 
             switch (alt17) {
                 case 1 :
-                    // InternalHriDsl.g:1700:3: (enumLiteral_0= 'simulation' )
+                    // InternalHriDsl.g:1716:3: (enumLiteral_0= 'simulation' )
                     {
-                    // InternalHriDsl.g:1700:3: (enumLiteral_0= 'simulation' )
-                    // InternalHriDsl.g:1701:4: enumLiteral_0= 'simulation'
+                    // InternalHriDsl.g:1716:3: (enumLiteral_0= 'simulation' )
+                    // InternalHriDsl.g:1717:4: enumLiteral_0= 'simulation'
                     {
-                    enumLiteral_0=(Token)match(input,77,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,79,FOLLOW_2); 
 
                     				current = grammarAccess.getQuery_typeAccess().getSIMULATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getQuery_typeAccess().getSIMULATIONEnumLiteralDeclaration_0());
@@ -4260,12 +4312,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalHriDsl.g:1708:3: (enumLiteral_1= 'probability_of_success' )
+                    // InternalHriDsl.g:1724:3: (enumLiteral_1= 'probability_of_success' )
                     {
-                    // InternalHriDsl.g:1708:3: (enumLiteral_1= 'probability_of_success' )
-                    // InternalHriDsl.g:1709:4: enumLiteral_1= 'probability_of_success'
+                    // InternalHriDsl.g:1724:3: (enumLiteral_1= 'probability_of_success' )
+                    // InternalHriDsl.g:1725:4: enumLiteral_1= 'probability_of_success'
                     {
-                    enumLiteral_1=(Token)match(input,78,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,80,FOLLOW_2); 
 
                     				current = grammarAccess.getQuery_typeAccess().getPROBABILITY_OF_SUCCESSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getQuery_typeAccess().getPROBABILITY_OF_SUCCESSEnumLiteralDeclaration_1());
@@ -4277,12 +4329,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalHriDsl.g:1716:3: (enumLiteral_2= 'expected_fatigue' )
+                    // InternalHriDsl.g:1732:3: (enumLiteral_2= 'expected_fatigue' )
                     {
-                    // InternalHriDsl.g:1716:3: (enumLiteral_2= 'expected_fatigue' )
-                    // InternalHriDsl.g:1717:4: enumLiteral_2= 'expected_fatigue'
+                    // InternalHriDsl.g:1732:3: (enumLiteral_2= 'expected_fatigue' )
+                    // InternalHriDsl.g:1733:4: enumLiteral_2= 'expected_fatigue'
                     {
-                    enumLiteral_2=(Token)match(input,79,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,81,FOLLOW_2); 
 
                     				current = grammarAccess.getQuery_typeAccess().getEXPECTED_FATIGUEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getQuery_typeAccess().getEXPECTED_FATIGUEEnumLiteralDeclaration_2());
@@ -4294,12 +4346,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalHriDsl.g:1724:3: (enumLiteral_3= 'expected_charge' )
+                    // InternalHriDsl.g:1740:3: (enumLiteral_3= 'expected_charge' )
                     {
-                    // InternalHriDsl.g:1724:3: (enumLiteral_3= 'expected_charge' )
-                    // InternalHriDsl.g:1725:4: enumLiteral_3= 'expected_charge'
+                    // InternalHriDsl.g:1740:3: (enumLiteral_3= 'expected_charge' )
+                    // InternalHriDsl.g:1741:4: enumLiteral_3= 'expected_charge'
                     {
-                    enumLiteral_3=(Token)match(input,80,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,82,FOLLOW_2); 
 
                     				current = grammarAccess.getQuery_typeAccess().getEXPECTED_CHARGEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getQuery_typeAccess().getEXPECTED_CHARGEEnumLiteralDeclaration_3());
@@ -4311,12 +4363,12 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalHriDsl.g:1732:3: (enumLiteral_4= 'probability_of_failure' )
+                    // InternalHriDsl.g:1748:3: (enumLiteral_4= 'probability_of_failure' )
                     {
-                    // InternalHriDsl.g:1732:3: (enumLiteral_4= 'probability_of_failure' )
-                    // InternalHriDsl.g:1733:4: enumLiteral_4= 'probability_of_failure'
+                    // InternalHriDsl.g:1748:3: (enumLiteral_4= 'probability_of_failure' )
+                    // InternalHriDsl.g:1749:4: enumLiteral_4= 'probability_of_failure'
                     {
-                    enumLiteral_4=(Token)match(input,81,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,83,FOLLOW_2); 
 
                     				current = grammarAccess.getQuery_typeAccess().getPROBABILITY_OF_FAILUREEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getQuery_typeAccess().getPROBABILITY_OF_FAILUREEnumLiteralDeclaration_4());
@@ -4357,10 +4409,10 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0003800000000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000E000000000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000600000000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0001E00000000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000010L});
@@ -4374,7 +4426,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000800002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x003C000000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00F0000000000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000004000000L});
@@ -4384,13 +4436,13 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x07C0000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x1F00000000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0xF800000000000000L,0x000000000000007FL});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0xE000000000000000L,0x00000000000001FFL});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000200010000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001F80L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000000007E00L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000001000000000L});
@@ -4398,7 +4450,7 @@ public class InternalHriDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000008000000002L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x000000000003E000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x00000000000F8000L});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000080L});
