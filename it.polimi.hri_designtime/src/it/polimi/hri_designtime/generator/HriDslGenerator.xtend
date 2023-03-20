@@ -179,7 +179,7 @@ class Operations{
 		}
 		
 		intersections.addAll(points_set);
-		return max_n;
+		return max_n+1;
 	}
 	
 	def private intersects(Rectangle2D.Float r1, Rectangle2D.Float r2){

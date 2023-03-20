@@ -98,7 +98,7 @@ public class Operations {
       }
     }
     intersections.addAll(this.points_set);
-    return this.max_n;
+    return (this.max_n + 1);
   }
   
   private boolean intersects(final Rectangle2D.Float r1, final Rectangle2D.Float r2) {

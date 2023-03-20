@@ -1,0 +1,326 @@
+parameter length_unit cm
+parameter free_will_model err
+
+define layout l_crit:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill critical
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_crit:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_crit:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_stable:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill stable
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_stable:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_stable:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_inatt:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill distracted
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_inatt:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_inatt:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_foc:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill focused
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_foc:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_foc:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_busy:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill busy
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_busy:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_busy:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_ava:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill free
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_ava:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_ava:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_inex:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill unexperienced
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_inex:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_inex:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_exp:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill experienced
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill normal
+
+define mission DP3b_exp:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_exp:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_busy2:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill busy
+
+define mission DP3b_busy2:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_busy2:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_ava2:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill free
+
+define mission DP3b_ava2:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_ava2:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_inex2:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill unexperienced
+
+define mission DP3b_inex2:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_inex2:
+compute probability_of_success with duration 600 runs "auto" 
+
+define layout l_exp2:
+area a1 in (200.0,200.0) (4400.0,400.0)
+area a2 in (4200.0,0.0) (4400.0,600.0)
+poi RECH in (300.0,370.0)
+poi WR in (4300.0,300.0)
+poi CUP1 in (4000.0,300.0)
+poi OFF in (2000.0,300.0)
+
+define robots:
+robot Tbot in (300.0,300.0) type turtlebot3_wafflepi charge 90.0
+
+define humans:
+human P1 in (220.0,300.0) speed 26.0 dexterity 1 is young_sick freewill normal
+human D1 in (260.0,300.0) speed 100.0 dexterity 1 is elderly_healthy freewill normal
+human D2 in (2000.0,300.0) speed 50.0 dexterity 10 is elderly_healthy freewill experienced
+
+define mission DP3b_exp2:
+do robot_leader for P1 with target WR
+do robot_competitor for D1 with target CUP1
+do robot_follower for D2 with target CUP1
+do robot_follower for D2 with target OFF
+do robot_leader for P1 with target OFF
+do robot_rescuer for D2 with target OFF
+
+define queries of mission DP3b_exp2:
+compute probability_of_success with duration 600 runs "auto" 
